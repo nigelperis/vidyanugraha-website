@@ -1,249 +1,57 @@
 @import 'tailwindcss';
-@import 'tw-animate-css';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --anupama-red: #ed3410;
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --shadow-mentor-shadow: 0px 4px 20px rgba(110, 127, 185, 0.1);
+
+  --inset-54\%: 54%;
+
+  --color-primary: #611f69;
+  --color-cream: #fcf5ef;
+  --color-success: #6b9f36;
+  --color-orange: #f9cd92;
+
+  --background-image-banner-image: url('/images/banner/background.png');
+  --background-image-newsletter: url('/images/newsletter/hands.svg');
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-primary: var(--font-primary);
-  --color-primary: var(--anupama-red);
-}
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: light;
-    background: #ffffff;
-    color: #000000;
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  section {
+    @apply py-14;
+  }
+
+  h1 {
+    @apply text-5xl text-black sm:text-6xl md:text-7xl;
+  }
+
+  h2 {
+    @apply text-4xl text-black sm:text-5xl;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-primary), sans-serif;
-}
-
-.article h1 {
-  @apply font-primary text-6xl;
-}
-.article h2 {
-  @apply font-primary text-5xl;
-}
-.article h3 {
-  @apply font-primary text-4xl;
-}
-.article h4 {
-  @apply font-primary text-3xl;
-}
-.article h5 {
-  @apply font-primary text-2xl;
-}
-.article h6 {
-  @apply font-primary text-xl;
-}
-
-.article p {
-  @apply font-primary mb-4 text-base leading-relaxed text-gray-800;
-}
-
-.article a {
-  @apply text-blue-600 underline hover:text-blue-800;
-}
-
-.article ul {
-  @apply mb-4 list-disc pl-6;
-}
-.article ol {
-  @apply mb-4 list-decimal pl-6;
-}
-.article li {
-  @apply mb-2;
-}
-
-.article blockquote {
-  @apply my-6 border-l-4 border-gray-300 pl-4 text-gray-600 italic;
-}
-
-.article img {
-  @apply my-6 h-auto max-w-full;
-}
-
-.article figure {
-  @apply my-6;
-}
-.article figcaption {
-  @apply mt-2 text-center text-sm text-gray-500;
-}
-
-.article pre {
-  @apply overflow-x-auto rounded bg-gray-100 p-4 text-sm;
-}
-.article code {
-  @apply rounded bg-gray-200 px-1 py-0.5 font-mono text-sm;
-}
-
-.article table {
-  @apply my-6 w-full table-auto border-collapse;
-}
-.article th {
-  @apply border bg-gray-100 p-2 text-left font-semibold;
-}
-.article td {
-  @apply border p-2;
-}
-
-.article hr {
-  @apply my-8 border-gray-300;
-}
-
-.article strong {
-  @apply font-semibold;
-}
-.article em {
-  @apply italic;
-}
-
-.article iframe {
-  position: relative;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-}
-
-.video-article iframe {
-  @apply absolute inset-0 h-full w-full;
-}
-
-.video-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-}
-
-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
+@layer utilities {
+  .container {
+    @apply mx-auto w-full max-w-7xl px-4;
+  }
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-.bg-fancy-overlay {
-  background:
-    radial-gradient(
-      177.32% 100.9% at 46.2% 0%,
-      #ffffff 0%,
-      rgba(255, 255, 255, 0) 100%
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0.46%,
-      rgba(255, 255, 255, 0.2) 0.82%,
-      rgba(255, 255, 255, 0) 2.18%,
-      rgba(255, 255, 255, 0) 4.43%,
-      rgba(0, 0, 0, 0) 4.79%,
-      rgba(0, 0, 0, 0.064) 5.18%,
-      rgba(0, 0, 0, 0.148) 5.44%,
-      rgba(0, 0, 0, 0.2) 5.74%,
-      rgba(255, 255, 255, 0.2) 5.78%,
-      rgba(255, 255, 255, 0.174) 6.03%,
-      rgba(255, 255, 255, 0.094) 6.29%,
-      rgba(255, 255, 255, 0) 6.56%
-    );
-  background-blend-mode: soft-light, overlay;
-  box-shadow:
-    inset -0.753825px -0.753825px 3.0153px rgba(0, 0, 0, 0.35),
-    inset 0.753825px 0.753825px 3.0153px rgba(255, 255, 255, 0.35),
-    inset 6.0306px -6.0306px 12.0612px -6.0306px rgba(0, 0, 0, 0.08),
-    inset 12.0612px -12.0612px 12.0612px -12.0612px rgba(0, 0, 0, 0.25);
-}
-
-.navbar {
-  animation: animateNav 2s ease-out forwards;
-  animation-timeline: view();
-  animation-range-start: 100vh;
-  animation-range-end: 160vh;
-}
-
-.navbar-logo {
-  animation: animateNavLogo 2s ease-out forwards;
-  animation-timeline: view();
-  animation-range-start: 100vh;
-  animation-range-end: 160vh;
-}
-
-.navbar-tagline {
-  animation: animateNavTagline 2s ease-out forwards;
-  animation-timeline: view();
-  animation-range-start: 100vh;
-  animation-range-end: 160vh;
-}
-
-@keyframes animateNavLogo {
-  100% {
-    height: 60px;
-  }
-
-  0% {
-  }
-}
-
-@keyframes animateNav {
-  100% {
-    height: 60px;
-  }
-
-  0% {
-    height: 160px;
-  }
-}
-
-@keyframes animateNavTagline {
-  100% {
-    font-size: 12px;
-  }
-
-  0% {
-    font-size: 20px;
-  }
-}
-.scroll-container-wrapper,
-.scroll-container-wrapper > * {
-  /* background: grey; */
-  animation: scrollContainerAnimation 2s ease-out forwards;
-  animation-timeline: view();
-  animation-range-start: 100vh;
-  animation-range-end: 160vh;
-}
-
-.scroll-container {
-}
-
-@keyframes scrollContainerAnimation {
-  0% {
-  }
-  100% {
-    height: 0px;
-  }
-}
-
-.scroll-container::-webkit-scrollbar {
-  width: 3px; /*sets the thickness of vertical scroll  */
-  height: 3px; /*sets the thickness of horizontal scroll */
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-.scroll-container::-webkit-scrollbar-thumb {
-  background-color: white;
-  border-radius: 1px;
-}
-.scroll-container::-webkit-scrollbar-track {
-  background-color: var(--anupama-red);
 }
