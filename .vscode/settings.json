@@ -1,0 +1,17 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "eslint.codeActionsOnSave.mode": "problems",
+  "npm.packageManager": "pnpm",
+  "editor.wordWrap": "on",
+  "npm.autoDetect": "on",
+  "editor.renderFinalNewline": "dimmed",
+  "[html][typescript][typescriptreact][javascript][javascriptreact][css][json]": {
+    "files.eol": "\n"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
+}

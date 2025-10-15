@@ -1,0 +1,4 @@
+# Ignore artifacts:
+build
+coverage
+src/graphql-env.d.ts
