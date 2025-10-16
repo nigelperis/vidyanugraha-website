@@ -4,9 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { HeaderItem } from '../../../../types/menu';
+import { type HeaderItem } from '../../../../types/menu';
 
-const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
+function HeaderLink({ item }: { item: HeaderItem }) {
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const path = usePathname();
   const handleMouseEnter = () => {
@@ -31,7 +31,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
         }`}
       >
         {item.label}
-        {item.submenu && (
+        {item.submenu ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1.5em"
@@ -47,17 +47,17 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
               d="m7 10l5 5l5-5"
             />
           </svg>
-        )}
+        ) : null}
       </Link>
-      {submenuOpen && (
+      {submenuOpen ? (
         <div
-          className={`dark:bg-darklight absolute left-0 mt-0.5 w-60 rounded-lg bg-white py-2 shadow-lg dark:text-white`}
+          className="dark:bg-darklight absolute left-0 mt-0.5 w-60 rounded-lg bg-white py-2 shadow-lg dark:text-white"
           data-aos="fade-up"
           data-aos-duration="500"
         >
-          {item.submenu?.map((subItem, index) => (
+          {item.submenu?.map((subItem) => (
             <Link
-              key={index}
+              key={subItem.href}
               href={subItem.href}
               className={`block px-4 py-2 ${
                 path === subItem.href
@@ -69,9 +69,9 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
             </Link>
           ))}
         </div>
-      )}
+      ) : null}
     </div>
   );
-};
+}
 
 export default HeaderLink;
