@@ -35,8 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Vidyanugraha Education Trust',
-    description:
-      'Fostering quality education and empowering students for a better tomorrow.',
+    description: '',
     images: ['/og-image.jpg'],
     creator: '@vidyanugraha', // if you make a Twitter/X handle later
   },
