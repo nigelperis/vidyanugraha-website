@@ -4,7 +4,7 @@ const MentorSkeleton = () => {
       <div>
         <div
           role="status"
-          className="max-w-md animate-pulse overflow-hidden rounded-lg bg-gray-100 p-8"
+          className="max-w-md animate-pulse overflow-hidden bg-gray-100 p-8"
         >
           <svg
             className="my-10 h-30 w-full text-gray-200"

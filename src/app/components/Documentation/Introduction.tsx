@@ -66,7 +66,7 @@ export const Introduction = () => {
           </button>
         </div>
 
-        <div className="border-dark_border border-opacity-60 flex w-full flex-wrap justify-between gap-6 rounded-md border p-6 lg:flex-nowrap lg:gap-0">
+        <div className="border-dark_border border-opacity-60 flex w-full flex-wrap justify-between gap-6 border p-6 lg:flex-nowrap lg:gap-0">
           {PackageVersions &&
             PackageVersions.map((item) => {
               return (

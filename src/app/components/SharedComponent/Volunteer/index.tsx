@@ -16,7 +16,7 @@ const Volunteer = () => {
           <div className="flex justify-center">
             <Link
               href="#"
-              className="from-error to-warning hover:border-error hover:text-error rounded-sm border border-transparent bg-linear-to-r px-7 py-5 text-white hover:from-transparent hover:to-transparent"
+              className="from-error to-warning hover:border-error hover:text-error border border-transparent bg-linear-to-r px-7 py-5 text-white hover:from-transparent hover:to-transparent"
             >
               Donate now
             </Link>

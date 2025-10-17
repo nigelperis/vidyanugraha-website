@@ -52,7 +52,7 @@ const Dropdown = () => {
       <p className="text-lg text-gray-500">What do you want to learn?</p>
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative mt-1">
-          <ListboxButton className="focus-visible:ring-opacity-75 relative w-full cursor-default rounded-lg bg-white py-2 pr-10 text-left text-xl hover:cursor-pointer focus:outline-hidden focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+          <ListboxButton className="focus-visible:ring-opacity-75 relative w-full cursor-default bg-white py-2 pr-10 text-left text-xl hover:cursor-pointer focus:outline-hidden focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
             <span className="block truncate text-xl font-semibold">
               {selected?.name}
             </span>
@@ -69,7 +69,7 @@ const Dropdown = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <ListboxOptions className="ring-opacity-5 absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black focus:outline-hidden sm:text-sm">
+            <ListboxOptions className="ring-opacity-5 absolute z-10 mt-1 max-h-60 w-full overflow-auto bg-white py-1 text-base shadow-lg ring-1 ring-black focus:outline-hidden sm:text-sm">
               {course.map((person, personIdx) => (
                 <ListboxOption
                   key={personIdx}

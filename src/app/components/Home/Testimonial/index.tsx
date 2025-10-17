@@ -83,7 +83,7 @@ const Testimonial = () => {
             What Our Happy <br /> Students Says
           </h2>
           <div>
-            <button className="hover:bg-primary text-primary border-primary cursor-pointer rounded-sm border bg-transparent px-4 py-3 font-semibold duration-300 hover:border-transparent hover:text-white">
+            <button className="hover:bg-primary text-primary border-primary cursor-pointer border bg-transparent px-4 py-3 font-semibold duration-300 hover:border-transparent hover:text-white">
               Give Your Review
             </button>
           </div>
@@ -99,7 +99,7 @@ const Testimonial = () => {
               ))
             : testimonial.map((items, i) => (
                 <div key={i}>
-                  <div className="m-4 rounded-lg bg-white px-12 pt-8 pb-10 text-center">
+                  <div className="m-4 bg-white px-12 pt-8 pb-10 text-center">
                     <div className="before:left-54% relative z-0 flex items-center justify-center before:absolute before:bottom-0 before:z-10 before:h-6 before:w-6 before:bg-[url('/images/testimonial/greenpic.svg')]">
                       <Image
                         src={items.imgSrc}

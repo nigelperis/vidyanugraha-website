@@ -64,7 +64,7 @@ const SignUp = () => {
             placeholder="Name"
             name="name"
             required
-            className="text-dark focus:border-primary w-full rounded-md border border-solid border-gray-200 bg-transparent px-5 py-3 text-base text-black outline-hidden transition placeholder:text-black/30 focus-visible:shadow-none"
+            className="text-dark focus:border-primary w-full border border-solid border-gray-200 bg-transparent px-5 py-3 text-base text-black outline-hidden transition placeholder:text-black/30 focus-visible:shadow-none"
           />
         </div>
         <div className="mb-[22px]">
@@ -73,7 +73,7 @@ const SignUp = () => {
             placeholder="Email"
             name="email"
             required
-            className="text-dark focus:border-primary w-full rounded-md border border-solid border-gray-200 bg-transparent px-5 py-3 text-base text-black outline-hidden transition placeholder:text-black/30 focus-visible:shadow-none"
+            className="text-dark focus:border-primary w-full border border-solid border-gray-200 bg-transparent px-5 py-3 text-base text-black outline-hidden transition placeholder:text-black/30 focus-visible:shadow-none"
           />
         </div>
         <div className="mb-[22px]">
@@ -82,13 +82,13 @@ const SignUp = () => {
             placeholder="Password"
             name="password"
             required
-            className="text-dark focus:border-primary w-full rounded-md border border-solid border-gray-200 bg-transparent px-5 py-3 text-base text-black outline-hidden transition placeholder:text-black/30 focus-visible:shadow-none"
+            className="text-dark focus:border-primary w-full border border-solid border-gray-200 bg-transparent px-5 py-3 text-base text-black outline-hidden transition placeholder:text-black/30 focus-visible:shadow-none"
           />
         </div>
         <div className="mb-9">
           <button
             type="submit"
-            className="text-18 bg-primary text-darkmode hover:text-primary border-primary flex w-full items-center justify-center rounded-md border px-5 py-3 font-medium text-white transition duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent"
+            className="text-18 bg-primary text-darkmode hover:text-primary border-primary flex w-full items-center justify-center border px-5 py-3 font-medium text-white transition duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent"
           >
             Sign Up {loading && <Loader />}
           </button>

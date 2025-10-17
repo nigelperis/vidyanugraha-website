@@ -38,7 +38,7 @@ export default function ScrollToTop() {
             'https://getnextjstemplates.com/products/si-educational-free-nextjs-landing-page-template'
           }
           target="_blank"
-          className="bg-primary hover:bg-darkmode hidden rounded-lg px-4 py-3.5 text-sm leading-none font-medium text-nowrap text-white lg:block"
+          className="bg-primary hover:bg-darkmode hidden px-4 py-3.5 text-sm leading-none font-medium text-nowrap text-white lg:block"
         >
           Download Now
         </Link>
@@ -46,7 +46,7 @@ export default function ScrollToTop() {
           <div
             onClick={scrollToTop}
             aria-label="scroll to top"
-            className="back-to-top hover:bg-dark flex h-10 w-10 cursor-pointer items-center justify-center rounded-md bg-[#102C46] text-white shadow-md transition duration-300 ease-in-out"
+            className="back-to-top hover:bg-dark flex h-10 w-10 cursor-pointer items-center justify-center bg-[#102C46] text-white shadow-md transition duration-300 ease-in-out"
           >
             <span className="mt-[6px] h-3 w-3 rotate-45 border-t border-l border-white"></span>
           </div>

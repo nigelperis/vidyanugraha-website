@@ -7,7 +7,7 @@ const SocialSignIn = () => {
       <div className="flex gap-4">
         <button
           onClick={() => signIn('google')}
-          className="flex w-full items-center justify-center gap-2.5 rounded-lg border border-gray-200 p-3.5 text-black hover:cursor-pointer hover:bg-neutral-100"
+          className="flex w-full items-center justify-center gap-2.5 border border-gray-200 p-3.5 text-black hover:cursor-pointer hover:bg-neutral-100"
         >
           Sign In
           <svg
@@ -50,7 +50,7 @@ const SocialSignIn = () => {
 
         <button
           onClick={() => signIn('github')}
-          className="flex w-full items-center justify-center gap-2.5 rounded-lg border border-gray-200 p-3.5 text-black hover:cursor-pointer hover:bg-neutral-100"
+          className="flex w-full items-center justify-center gap-2.5 border border-gray-200 p-3.5 text-black hover:cursor-pointer hover:bg-neutral-100"
         >
           Sign In
           <svg

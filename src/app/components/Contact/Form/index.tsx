@@ -120,7 +120,7 @@ const ContactForm = () => {
                   value={formData.firstname}
                   onChange={handleChange}
                   placeholder="John"
-                  className="focus:border-primary w-full rounded-2xl border border-solid px-4 py-2.5 text-base transition-all duration-500 focus:outline-0"
+                  className="focus:border-primary w-full border border-solid px-4 py-2.5 text-base transition-all duration-500 focus:outline-0"
                 />
               </div>
               <div className="mx-0 my-2.5 flex-1">
@@ -134,7 +134,7 @@ const ContactForm = () => {
                   value={formData.lastname}
                   onChange={handleChange}
                   placeholder="Doe"
-                  className="focus:border-primary w-full rounded-2xl border border-solid px-4 py-2.5 text-base transition-all duration-500 focus:outline-0"
+                  className="focus:border-primary w-full border border-solid px-4 py-2.5 text-base transition-all duration-500 focus:outline-0"
                 />
               </div>
             </div>
@@ -150,7 +150,7 @@ const ContactForm = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="john.doe@example.com"
-                  className="focus:border-primary w-full rounded-2xl border border-solid px-4 py-2.5 text-base transition-all duration-500 focus:outline-0"
+                  className="focus:border-primary w-full border border-solid px-4 py-2.5 text-base transition-all duration-500 focus:outline-0"
                 />
               </div>
               <div className="mx-0 my-2.5 flex-1">
@@ -167,7 +167,7 @@ const ContactForm = () => {
                   placeholder="+1234567890"
                   value={formData.phnumber}
                   onChange={handleChange}
-                  className="focus:border-primary w-full rounded-2xl border border-solid px-4 py-2.5 text-base transition-all duration-500 focus:outline-0"
+                  className="focus:border-primary w-full border border-solid px-4 py-2.5 text-base transition-all duration-500 focus:outline-0"
                 />
               </div>
             </div>
@@ -180,7 +180,7 @@ const ContactForm = () => {
                 name="Message"
                 value={formData.Message}
                 onChange={handleChange}
-                className="focus:border-primary mt-2 w-full rounded-2xl border border-solid px-5 py-3 transition-all duration-500 focus:outline-0"
+                className="focus:border-primary mt-2 w-full border border-solid px-5 py-3 transition-all duration-500 focus:outline-0"
                 placeholder="Anything else you wanna communicate"
               ></textarea>
             </div>

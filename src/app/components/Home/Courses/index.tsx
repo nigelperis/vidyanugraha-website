@@ -94,9 +94,9 @@ const NamesList = () => {
   }
 
   const nameElements = selectedNames.map((name, index) => (
-    <div id="Courses" key={index} className="group flex rounded-xl shadow-lg">
+    <div id="Courses" key={index} className="group flex shadow-lg">
       <div className="flex flex-col py-5 lg:py-0">
-        <div className="overflow-hidden rounded-lg bg-gray-100">
+        <div className="overflow-hidden bg-gray-100">
           <Image
             src={name.imageSrc}
             alt={name.course}
@@ -109,7 +109,7 @@ const NamesList = () => {
           <div className="flex flex-col gap-5">
             <div className="flex items-center justify-between">
               <p className="block font-normal text-gray-900">{name.course}</p>
-              <div className="text-success border-success block rounded-md border-2 border-solid px-1 text-lg font-semibold">
+              <div className="text-success border-success block border-2 border-solid px-1 text-lg font-semibold">
                 <p>${name.price}</p>
               </div>
             </div>
@@ -122,7 +122,7 @@ const NamesList = () => {
               </p>
             </Link>
           </div>
-          <div className="flex justify-between rounded-md border-2 border-solid p-2">
+          <div className="flex justify-between border-2 border-solid p-2">
             <p>12 Classes</p>
             <div className="flex flex-row space-x-4">
               <div className="flex">
@@ -156,12 +156,12 @@ const NamesList = () => {
         <div className="mb-4 flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
           <h2 className="font-bold tracking-tight">Popular Courses</h2>
           <div>
-            <button className="hover:bg-primary text-primary border-primary cursor-pointer rounded-sm border bg-transparent px-4 py-3 font-medium duration-300 hover:border-transparent hover:text-white">
+            <button className="hover:bg-primary text-primary border-primary cursor-pointer border bg-transparent px-4 py-3 font-medium duration-300 hover:border-transparent hover:text-white">
               Explore Classes
             </button>
           </div>
         </div>
-        <div className="nowhitespace mb-4 flex space-x-5 overflow-x-auto rounded-xl bg-white p-1">
+        <div className="nowhitespace mb-4 flex space-x-5 overflow-x-auto bg-white p-1">
           {/* FOR DESKTOP VIEW */}
           <button
             onClick={() => setSelectedButton('webdevelopment')}

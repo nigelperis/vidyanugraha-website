@@ -50,7 +50,7 @@ const Mentor = () => {
         <div className="mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
           <h2 className="font-bold tracking-tight">Meet with our Mentors</h2>
           <div>
-            <button className="hover:bg-primary text-primary border-primary cursor-pointer rounded-sm border bg-transparent px-4 py-3 font-medium duration-300 hover:border-transparent hover:text-white">
+            <button className="hover:bg-primary text-primary border-primary cursor-pointer border bg-transparent px-4 py-3 font-medium duration-300 hover:border-transparent hover:text-white">
               Explore 10+ our Mentor
             </button>
           </div>
@@ -63,7 +63,7 @@ const Mentor = () => {
               ))
             : mentor.map((item, index) => (
                 <div key={index} className="group relative shadow-lg">
-                  <div className="min-h-80 w-full overflow-hidden rounded-lg bg-gray-200 lg:h-80">
+                  <div className="min-h-80 w-full overflow-hidden bg-gray-200 lg:h-80">
                     <Image
                       src={item.imageSrc}
                       alt={item.imageAlt}
@@ -74,7 +74,7 @@ const Mentor = () => {
                   </div>
                   <div className="my-4 flex justify-center">
                     <div>
-                      <div className="shadow-mentorShadow -mt-8 flex items-center justify-center rounded-lg border border-white bg-white p-2">
+                      <div className="shadow-mentorShadow -mt-8 flex items-center justify-center border border-white bg-white p-2">
                         <Link
                           href="/"
                           className="text-center text-sm text-gray-700"

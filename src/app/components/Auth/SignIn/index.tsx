@@ -70,7 +70,7 @@ const Signin = () => {
             onChange={(e) =>
               setLoginData({ ...loginData, email: e.target.value })
             }
-            className="text-dark focus:border-primary w-full rounded-md border border-solid border-gray-200 bg-transparent px-5 py-3 text-base text-black outline-hidden transition placeholder:text-black/30 focus-visible:shadow-none"
+            className="text-dark focus:border-primary w-full border border-solid border-gray-200 bg-transparent px-5 py-3 text-base text-black outline-hidden transition placeholder:text-black/30 focus-visible:shadow-none"
           />
         </div>
         <div className="mb-[22px]">
@@ -80,14 +80,14 @@ const Signin = () => {
             onChange={(e) =>
               setLoginData({ ...loginData, password: e.target.value })
             }
-            className="text-dark focus:border-primary w-full rounded-md border border-solid border-gray-200 bg-transparent px-5 py-3 text-base text-black outline-hidden transition placeholder:text-black/30 focus-visible:shadow-none"
+            className="text-dark focus:border-primary w-full border border-solid border-gray-200 bg-transparent px-5 py-3 text-base text-black outline-hidden transition placeholder:text-black/30 focus-visible:shadow-none"
           />
         </div>
         <div className="mb-9">
           <button
             onClick={loginUser}
             type="submit"
-            className="bg-primary text-18 border-primary hover:text-primary w-full rounded-lg border py-3 font-medium text-white transition duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent"
+            className="bg-primary text-18 border-primary hover:text-primary w-full border py-3 font-medium text-white transition duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent"
           >
             Sign In {loading && <Loader />}
           </button>

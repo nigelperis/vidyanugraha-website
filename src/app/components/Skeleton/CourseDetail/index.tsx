@@ -4,7 +4,7 @@ const CourseDetailSkeleton = () => {
       <div>
         <div
           role="status"
-          className="mb-28 max-w-md animate-pulse overflow-hidden rounded-lg bg-gray-100 p-8"
+          className="mb-28 max-w-md animate-pulse overflow-hidden bg-gray-100 p-8"
         >
           <svg
             className="my-10 h-30 w-full text-gray-200"

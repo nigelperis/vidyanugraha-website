@@ -17,7 +17,7 @@ const Banner = () => {
               Build skills with our courses and mentor from world-class
               companies.
             </p>
-            <div className="mx-auto w-fit rounded-lg border border-white/30 bg-white/30 p-6 shadow-lg backdrop-blur-md">
+            <div className="mx-auto w-fit border border-white/30 bg-white/30 p-6 shadow-lg backdrop-blur-md">
               <div className="flex items-center justify-center gap-8">
                 <div className="hidden -space-x-2 overflow-hidden sm:block">
                   <Image
@@ -78,7 +78,7 @@ const Banner = () => {
 
           {/* DROPDOWN BUTTONS */}
 
-          <div className="boxshadow mx-auto mt-12 max-w-4xl rounded-lg bg-white p-6 lg:max-w-4xl lg:px-8">
+          <div className="boxshadow mx-auto mt-12 max-w-4xl bg-white p-6 lg:max-w-4xl lg:px-8">
             <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-8 xl:gap-x-8">
               <div className="col-span-3">
                 <Dropdownone />
@@ -88,7 +88,7 @@ const Banner = () => {
               </div>
               <div className="col-span-3 mt-2 sm:col-span-2">
                 <Link href={'/#courses-section'}>
-                  <button className="bg-primary hover:text-primary border-primary w-full rounded-sm border px-3 py-4 font-bold text-white duration-300 hover:cursor-pointer hover:bg-transparent">
+                  <button className="bg-primary hover:text-primary border-primary w-full border px-3 py-4 font-bold text-white duration-300 hover:cursor-pointer hover:bg-transparent">
                     Start
                   </button>
                 </Link>

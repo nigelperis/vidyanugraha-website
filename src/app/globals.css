@@ -7,10 +7,10 @@
 
   --inset-54\%: 54%;
 
-  --color-primary: #611f69;
-  --color-cream: #fcf5ef;
-  --color-success: #6b9f36;
-  --color-orange: #f9cd92;
+  --color-primary: #1d4ed8;
+  --color-accent: #f97316;
+  --color-muted: #0f172a;
+  --color-surface: #f8fafc;
 
   --background-image-banner-image: url('/images/banner/background.png');
   --background-image-newsletter: url('/images/newsletter/hands.svg');
@@ -31,6 +31,10 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
+  }
+
+  body {
+    @apply bg-[var(--color-surface)] text-slate-900 antialiased;
   }
 
   section {
@@ -54,4 +58,111 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Modern animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.5);
+  }
+}
+
+.animate-in {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+.slide-in-from-left {
+  animation: slide-in-left 1s ease-out;
+}
+
+.slide-in-from-right {
+  animation: slide-in-right 1s ease-out;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Smooth hover transitions */
+.hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Modern scroll animations */
+@keyframes slide-in-from-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-from-bottom {
+  animation: slide-in-from-bottom 0.4s ease-out;
+}
+
+/* Gradient text utilities */
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-accent)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }

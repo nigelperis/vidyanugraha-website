@@ -84,7 +84,7 @@ const ResetPassword = ({ token }: { token: string }) => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div
-              className="wow fadeInUp dark:bg-dark-2 relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white px-8 py-14 text-center sm:px-12 md:px-[60px]"
+              className="wow fadeInUp dark:bg-dark-2 relative mx-auto max-w-[525px] overflow-hidden bg-white px-8 py-14 text-center sm:px-12 md:px-[60px]"
               data-wow-delay=".15s"
             >
               <div className="mb-10 text-center">
@@ -115,7 +115,7 @@ const ResetPassword = ({ token }: { token: string }) => {
                     value={data?.newPassword}
                     onChange={handleChange}
                     required
-                    className="border-stroke text-dark placeholder:text-dark-6 focus:border-primary dark:border-dark-3 dark:focus:border-primary w-full rounded-md border bg-transparent px-5 py-3 text-base outline-hidden transition focus-visible:shadow-none dark:text-white"
+                    className="border-stroke text-dark placeholder:text-dark-6 focus:border-primary dark:border-dark-3 dark:focus:border-primary w-full border bg-transparent px-5 py-3 text-base outline-hidden transition focus-visible:shadow-none dark:text-white"
                   />
                 </div>
 
@@ -127,13 +127,13 @@ const ResetPassword = ({ token }: { token: string }) => {
                     value={data?.newPassword}
                     onChange={handleChange}
                     required
-                    className="border-stroke text-dark placeholder:text-dark-6 focus:border-primary dark:border-dark-3 dark:focus:border-primary w-full rounded-md border bg-transparent px-5 py-3 text-base outline-hidden transition focus-visible:shadow-none dark:text-white"
+                    className="border-stroke text-dark placeholder:text-dark-6 focus:border-primary dark:border-dark-3 dark:focus:border-primary w-full border bg-transparent px-5 py-3 text-base outline-hidden transition focus-visible:shadow-none dark:text-white"
                   />
                 </div>
                 <div className="">
                   <button
                     type="submit"
-                    className="border-primary bg-primary hover:bg-blue-dark flex w-full cursor-pointer items-center justify-center rounded-md border px-5 py-3 text-base text-white transition duration-300 ease-in-out"
+                    className="border-primary bg-primary hover:bg-blue-dark flex w-full cursor-pointer items-center justify-center border px-5 py-3 text-base text-white transition duration-300 ease-in-out"
                   >
                     Save Password {loader && <Loader />}
                   </button>
