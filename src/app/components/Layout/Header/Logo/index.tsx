@@ -1,11 +1,12 @@
+import { type JSX } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Logo: React.FC = () => {
+function Logo(): JSX.Element {
   return (
     <Link href="/">
       <Image
-        src="/images/logo/logo.svg"
+        src="/vidyanugraha-logo.png"
         alt="logo"
         width={160}
         height={50}
@@ -14,6 +15,6 @@ const Logo: React.FC = () => {
       />
     </Link>
   );
-};
+}
 
 export default Logo;

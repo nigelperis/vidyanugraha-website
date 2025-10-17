@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Dropdownone from './Dropdownone';
 import Dropdowntwo from './Dropdowntwo';
 
-const Banner = () => {
+function Banner() {
   return (
     <section id="Home" className="bg-banner-image pt-28 pb-20">
       <div className="relative px-6 lg:px-8">
@@ -61,7 +61,7 @@ const Banner = () => {
                   <div className="flex justify-center sm:justify-start">
                     <h3 className="mr-2 text-2xl font-semibold">4.6</h3>
                     <Image
-                      src={'/images/banner/Stars.svg'}
+                      src="/images/banner/Stars.svg"
                       alt="stars-icon"
                       width={32}
                       height={32}
@@ -99,6 +99,6 @@ const Banner = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Banner;

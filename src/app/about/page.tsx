@@ -162,7 +162,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-7xl">
             <div className="group relative overflow-hidden border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/50 transition-all duration-300 md:p-12">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-50/30 to-blue-50/30 opacity-0 transition-opacity group-hover:opacity-100"></div>
 

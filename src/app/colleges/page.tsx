@@ -275,7 +275,7 @@ export default function CollegesPage() {
               </span>
             </div>
 
-            <h2 className="text-4xl leading-tight font-bold sm:text-5xl">
+            <h2 className="text-4xl leading-tight font-bold text-blue-100 sm:text-5xl">
               Looking to onboard faculty for the
               <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
                 {' '}
