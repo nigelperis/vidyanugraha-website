@@ -1,3 +1,3 @@
-export type CourseType = {
+export interface CourseType {
   name: string;
-};
+}

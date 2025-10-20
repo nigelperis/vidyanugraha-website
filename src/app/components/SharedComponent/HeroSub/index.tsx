@@ -1,10 +1,8 @@
-import React, { FC } from 'react';
-
 interface HeroSubProps {
   title: string;
 }
 
-const HeroSub: FC<HeroSubProps> = ({ title }) => {
+export default function HeroSub({ title }: HeroSubProps) {
   return (
     <>
       <section className="bg-herosub-bg mt-20 bg-cover bg-no-repeat py-40 sm:mt-44 lg:mt-40">
@@ -14,6 +12,4 @@ const HeroSub: FC<HeroSubProps> = ({ title }) => {
       </section>
     </>
   );
-};
-
-export default HeroSub;
+}

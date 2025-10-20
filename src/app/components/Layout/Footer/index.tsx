@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Footer = () => {
+function Footer() {
   const navItems = [
     { href: '/', label: 'Home' },
     { href: '/colleges', label: 'Colleges' },
@@ -67,6 +67,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

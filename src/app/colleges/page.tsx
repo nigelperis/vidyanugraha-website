@@ -96,8 +96,8 @@ export default function CollegesPage() {
     <div className="space-y-0 overflow-hidden">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[var(--color-primary)] via-blue-800 to-blue-900 text-white">
-        <div className="absolute inset-0 bg-[url('/images/banner/background.png')] bg-cover bg-center opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-[url('/images/banner/background.png')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
 
         <div className="relative container py-32">
           <div className="animate-in slide-in-from-left mx-auto max-w-4xl space-y-8 text-center duration-1000">
@@ -144,23 +144,23 @@ export default function CollegesPage() {
             </div>
 
             <h2 className="mx-auto max-w-4xl text-4xl font-bold text-[var(--color-muted)] sm:text-5xl">
-              Institutions we're proud to support
+              Institutions we&apos;re proud to support
             </h2>
 
             <p className="mx-auto max-w-3xl text-lg leading-relaxed text-slate-600">
-              From engineering to management and arts, we've built lasting
+              From engineering to management and arts, we&apos;ve built lasting
               partnerships with institutions that share our commitment to
               educational excellence.
             </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            {partnerColleges.map((college, index) => (
+            {partnerColleges.map((college, _index) => (
               <div
                 key={college.name}
                 className="group relative overflow-hidden border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-slate-300/50"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
                 <div className="relative space-y-6">
                   <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[var(--color-primary)] to-blue-600 text-white shadow-lg">
@@ -213,7 +213,7 @@ export default function CollegesPage() {
                   <div
                     key={i}
                     className="h-10 w-10 rounded-full border-2 border-white bg-gradient-to-br from-blue-400 to-blue-600"
-                  ></div>
+                  />
                 ))}
               </div>
               <span className="text-sm text-slate-600">
@@ -223,12 +223,12 @@ export default function CollegesPage() {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2">
-            {partnershipPillars.map((item, index) => (
+            {partnershipPillars.map((item) => (
               <div
                 key={item.title}
                 className="group relative overflow-hidden border border-slate-200 bg-gradient-to-r from-slate-50 to-white p-6 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-slate-300/50"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
                 <div className="relative space-y-4">
                   <div className="flex h-12 w-12 items-center justify-center bg-gradient-to-br from-[var(--color-primary)] to-blue-600 text-white shadow-lg">
@@ -245,11 +245,8 @@ export default function CollegesPage() {
                   </div>
 
                   <div className="space-y-2">
-                    {item.features.map((feature, featureIndex) => (
-                      <div
-                        key={featureIndex}
-                        className="flex items-center gap-3"
-                      >
+                    {item.features.map((feature) => (
+                      <div key={feature} className="flex items-center gap-3">
                         <CheckCircle className="h-4 w-4 text-green-500" />
                         <span className="text-sm text-slate-600">
                           {feature}

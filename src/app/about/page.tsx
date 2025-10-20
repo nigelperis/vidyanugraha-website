@@ -76,8 +76,8 @@ export default function AboutPage() {
     <div className="space-y-0 overflow-hidden">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[var(--color-primary)] via-blue-800 to-blue-900 text-white">
-        <div className="absolute inset-0 bg-[url('/images/banner/background.png')] bg-cover bg-center opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-[url('/images/banner/background.png')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
 
         <div className="relative container grid gap-12 py-12 md:grid-cols-[1.1fr,0.9fr] md:items-center">
           <div className="animate-in slide-in-from-left space-y-8 duration-1000">
@@ -164,7 +164,7 @@ export default function AboutPage() {
 
           <div className="mx-auto max-w-7xl">
             <div className="group relative overflow-hidden border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/50 transition-all duration-300 md:p-12">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-50/30 to-blue-50/30 opacity-0 transition-opacity group-hover:opacity-100"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-50/30 to-blue-50/30 opacity-0 transition-opacity group-hover:opacity-100" />
 
               <div className="relative space-y-8">
                 <div className="flex items-start gap-6">
@@ -184,7 +184,7 @@ export default function AboutPage() {
 
                 <div className="space-y-6 text-justify text-lg leading-relaxed text-slate-700">
                   <p>
-                    "Education is the cornerstone of progress, and at
+                    Education is the cornerstone of progress, and at
                     Vidyanugraha PU College, we believe in nurturing not just
                     academically proficient students, but well-rounded
                     individuals who are ready to take on the challenges of the
@@ -227,7 +227,7 @@ export default function AboutPage() {
 
                   <p className="font-semibold text-[var(--color-primary)]">
                     Together, we aspire to create a generation of young leaders
-                    who are knowledgeable, responsible, and visionary."
+                    who are knowledgeable, responsible, and visionary.
                   </p>
                 </div>
               </div>
@@ -256,12 +256,12 @@ export default function AboutPage() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
-            {values.map((item, index) => (
+            {values.map((item) => (
               <div
                 key={item.title}
                 className="group relative overflow-hidden border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-slate-300/50"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
                 <div className="relative space-y-6">
                   <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[var(--color-primary)] to-blue-600 text-white shadow-lg">
@@ -278,11 +278,8 @@ export default function AboutPage() {
                   </div>
 
                   <div className="space-y-2">
-                    {item.features.map((feature, featureIndex) => (
-                      <div
-                        key={featureIndex}
-                        className="flex items-center gap-3"
-                      >
+                    {item.features.map((feature) => (
+                      <div key={feature} className="flex items-center gap-3">
                         <CheckCircle className="h-4 w-4 text-green-500" />
                         <span className="text-sm text-slate-600">
                           {feature}
@@ -317,12 +314,12 @@ export default function AboutPage() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
-            {team.map((member, index) => (
+            {team.map((member) => (
               <div
                 key={member.name}
                 className="group relative overflow-hidden border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-slate-300/50"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
                 <div className="relative space-y-4">
                   <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[var(--color-primary)] to-blue-600 text-white shadow-lg">
@@ -353,7 +350,7 @@ export default function AboutPage() {
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-sm">
               <Mail className="h-4 w-4" />
               <span className="tracking-wider uppercase">
-                Let's collaborate
+                Let&apos;s collaborate
               </span>
             </div>
 
@@ -368,7 +365,7 @@ export default function AboutPage() {
             <p className="mx-auto max-w-3xl text-lg leading-relaxed text-white/90">
               Whether you need semester-long faculty deployment or specialised
               visiting faculty, our team will help you design the right staffing
-              model that fits your institution's unique needs.
+              model that fits your institution&apos;s unique needs.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">

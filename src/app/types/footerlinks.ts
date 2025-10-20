@@ -1,9 +1,9 @@
-export type Link = {
+export interface Link {
   label: string;
   href: string;
-};
+}
 
-export type FooterLinkType = {
+export interface FooterLinkType {
   section: string;
   links: Link[];
-};
+}

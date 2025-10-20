@@ -31,11 +31,14 @@ export default function AnimatedCounter({
     );
 
     const element = document.getElementById(`counter-${label}`);
+
     if (element) {
       observer.observe(element);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, [label]);
 
   useEffect(() => {
@@ -46,10 +49,12 @@ export default function AnimatedCounter({
 
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
+
       const progress = Math.min((timestamp - startTime) / duration, 1);
 
       // Easing function for smooth animation
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+
       setCount(Math.floor(easeOutQuart * numericValue));
 
       if (progress < 1) {

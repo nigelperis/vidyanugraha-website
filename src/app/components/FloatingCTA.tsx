@@ -15,7 +15,10 @@ export default function FloatingCTA() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   if (!isVisible) return null;
@@ -26,7 +29,7 @@ export default function FloatingCTA() {
         className={`transition-all duration-300 ${isExpanded ? 'space-y-3' : ''}`}
       >
         {/* Expanded options */}
-        {isExpanded && (
+        {isExpanded ? (
           <div className="animate-in slide-in-from-bottom space-y-3 duration-300">
             <Link
               href="mailto:hello@vidyanugraha.com"
@@ -44,11 +47,14 @@ export default function FloatingCTA() {
               <span>Call Now</span>
             </Link>
           </div>
-        )}
+        ) : null}
 
         {/* Main button */}
         <button
-          onClick={() => setIsExpanded(!isExpanded)}
+          type="button"
+          onClick={() => {
+            setIsExpanded(!isExpanded);
+          }}
           className="pulse-glow flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-[var(--color-accent)] to-orange-500 text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl"
         >
           {isExpanded ? (

@@ -1,3 +1,3 @@
-export type Hourtype = {
+export interface Hourtype {
   name: string;
-};
+}

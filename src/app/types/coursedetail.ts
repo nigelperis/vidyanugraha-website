@@ -1,4 +1,4 @@
-export type CourseDetailType = {
+export interface CourseDetailType {
   course: string;
   imageSrc: string;
   profession: string;
@@ -8,4 +8,4 @@ export type CourseDetailType = {
     | 'webdevelopment'
     | 'datascience'
     | 'cloudcomputing';
-};
+}

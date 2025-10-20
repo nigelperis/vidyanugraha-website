@@ -107,8 +107,8 @@ export default function Home() {
       <div className="space-y-0 overflow-hidden">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-[var(--color-primary)] via-blue-800 to-blue-900 text-white">
-          <div className="absolute inset-0 bg-[url('/images/banner/background.png')] bg-cover bg-center opacity-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-[url('/images/banner/background.png')] bg-cover bg-center opacity-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
 
           <div className="relative container grid gap-12 py-12 md:grid-cols-[1.1fr,0.9fr] md:items-center">
             <div className="animate-in slide-in-from-left space-y-8 duration-1000">
@@ -197,12 +197,12 @@ export default function Home() {
             </div>
 
             <div className="grid gap-8 md:grid-cols-3">
-              {highlights.map((item, index) => (
+              {highlights.map((item, _index) => (
                 <div
                   key={item.title}
                   className="group relative overflow-hidden border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-slate-300/50"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
                   <div className="relative space-y-6">
                     <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[var(--color-primary)] to-blue-600 text-white shadow-lg">
@@ -219,11 +219,8 @@ export default function Home() {
                     </div>
 
                     <div className="space-y-2">
-                      {item.features.map((feature, featureIndex) => (
-                        <div
-                          key={featureIndex}
-                          className="flex items-center gap-3"
-                        >
+                      {item.features.map((feature) => (
+                        <div key={feature} className="flex items-center gap-3">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span className="text-sm text-slate-600">
                             {feature}
@@ -263,7 +260,7 @@ export default function Home() {
                     <div
                       key={i}
                       className="h-10 w-10 rounded-full border-2 border-white bg-gradient-to-br from-blue-400 to-blue-600"
-                    ></div>
+                    />
                   ))}
                 </div>
                 <span className="text-sm text-slate-600">
@@ -316,14 +313,17 @@ export default function Home() {
             </div>
 
             <div className="grid gap-8 md:grid-cols-2">
-              {testimonials.map((testimonial, index) => (
+              {testimonials.map((testimonial) => (
                 <div
-                  key={index}
+                  key={`${testimonial.author}-${testimonial.role}`}
                   className="border border-slate-200 bg-white p-8 shadow-lg"
                 >
                   <div className="space-y-4">
                     <div className="flex gap-1">
-                      {[...Array(testimonial.rating)].map((_, i) => (
+                      {Array.from(
+                        { length: testimonial.rating },
+                        (_, i) => i,
+                      ).map((i) => (
                         <div key={i} className="h-5 w-5 text-yellow-400">
                           ⭐
                         </div>
@@ -331,7 +331,7 @@ export default function Home() {
                     </div>
 
                     <blockquote className="text-lg text-slate-700 italic">
-                      "{testimonial.quote}"
+                      &quot;{testimonial.quote}&quot;
                     </blockquote>
 
                     <div className="border-t pt-4">
@@ -356,7 +356,7 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-sm">
                 <Mail className="h-4 w-4" />
                 <span className="tracking-wider uppercase">
-                  Let's collaborate
+                  Let&apos;s collaborate
                 </span>
               </div>
 

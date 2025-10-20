@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -11,7 +12,7 @@ const NAV_ITEMS = [
   { href: '/contact', label: 'Contact' },
 ];
 
-const Header = () => {
+function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -24,10 +25,13 @@ const Header = () => {
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <div className="-m-2 flex h-18 w-18 items-center justify-center p-1 sm:m-0">
-            <img
+            <Image
               src="/images/logo/Vidyanugraha_Logo.png"
               alt="Vidyanugraha Trust Logo"
+              width={72}
+              height={72}
               className="h-full w-full object-contain"
+              priority
             />
           </div>
           <div>
@@ -45,6 +49,7 @@ const Header = () => {
               item.href === '/'
                 ? pathname === '/'
                 : pathname.startsWith(item.href);
+
             return (
               <Link
                 key={item.href}
@@ -62,20 +67,22 @@ const Header = () => {
         </nav>
         <button
           type="button"
-          onClick={() => setIsMenuOpen((prev) => !prev)}
+          onClick={() => {
+            setIsMenuOpen((prev) => !prev);
+          }}
           className="flex h-10 w-10 items-center justify-center border border-slate-200 text-slate-600 md:hidden"
           aria-expanded={isMenuOpen}
           aria-label="Toggle navigation"
         >
           <span className="sr-only">Toggle navigation menu</span>
           <div className="flex flex-col gap-[5px]">
-            <span className="block h-[2px] w-5 bg-current"></span>
-            <span className="block h-[2px] w-4 bg-current"></span>
-            <span className="block h-[2px] w-6 bg-current"></span>
+            <span className="block h-[2px] w-5 bg-current" />
+            <span className="block h-[2px] w-4 bg-current" />
+            <span className="block h-[2px] w-6 bg-current" />
           </div>
         </button>
       </div>
-      {isMenuOpen && (
+      {isMenuOpen ? (
         <div className="border-t border-slate-200 bg-white md:hidden">
           <nav className="container flex flex-col gap-4 py-4">
             {NAV_ITEMS.map((item) => {
@@ -83,6 +90,7 @@ const Header = () => {
                 item.href === '/'
                   ? pathname === '/'
                   : pathname.startsWith(item.href);
+
               return (
                 <Link
                   key={item.href}
@@ -99,9 +107,9 @@ const Header = () => {
             })}
           </nav>
         </div>
-      )}
+      ) : null}
     </header>
   );
-};
+}
 
 export default Header;

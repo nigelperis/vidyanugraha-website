@@ -1,10 +1,10 @@
-export type SubmenuItem = {
+export interface SubmenuItem {
   label: string;
   href: string;
-};
+}
 
-export type HeaderItem = {
+export interface HeaderItem {
   label: string;
   href: string;
   submenu?: SubmenuItem[];
-};
+}

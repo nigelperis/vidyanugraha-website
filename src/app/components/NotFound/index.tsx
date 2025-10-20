@@ -1,8 +1,7 @@
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const NotFound = () => {
+function NotFound() {
   return (
     <section className="bg-white pt-8 pb-20">
       <div className="container mx-auto">
@@ -72,6 +71,6 @@ const NotFound = () => {
       </div>
     </section>
   );
-};
+}
 
 export default NotFound;

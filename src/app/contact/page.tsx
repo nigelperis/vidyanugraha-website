@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'Get in touch with Vidyanugraha Trust. Contact us for faculty deployment, partnerships, or any inquiries about our educational services.',
 };
 
-const contactInfo = [
+const _contactInfo = [
   {
     icon: Mail,
     title: 'Email us',
@@ -48,7 +48,7 @@ const contactInfo = [
   },
 ];
 
-const inquiryTypes = [
+const _inquiryTypes = [
   {
     icon: Users,
     title: 'Faculty deployment',
@@ -85,7 +85,7 @@ export default function ContactPage() {
 
               <p className="mx-auto max-w-3xl text-lg leading-relaxed text-slate-600">
                 Fill out the form below with your specific requirements and
-                we'll get back to you with a tailored response.
+                we&apos;ll get back to you with a tailored response.
               </p>
             </div>
 
@@ -200,7 +200,7 @@ export default function ContactPage() {
                     rows={6}
                     className="w-full border border-slate-300 px-4 py-3 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:outline-none"
                     placeholder="Please provide details about your requirements, timeline, and any specific needs..."
-                  ></textarea>
+                  />
                 </div>
 
                 <div className="flex items-center gap-3">

@@ -14,14 +14,6 @@ const nextConfig: NextConfig = {
       { hostname: '*' },
     ],
   },
-  webpack: (config) => {
-    // Required for react-pdf to work properly
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access -- webpack config is not typed
-    config.resolve.alias.canvas = false;
-
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return -- webpack config is not typed
-    return config;
-  },
 };
 
 export default nextConfig;
