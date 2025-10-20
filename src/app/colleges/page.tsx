@@ -10,6 +10,7 @@ import {
   TrendingUp,
   Users,
 } from 'lucide-react';
+import Image from 'next/image';
 
 import type { Metadata } from 'next';
 
@@ -21,34 +22,11 @@ export const metadata: Metadata = {
 
 const partnerColleges = [
   {
-    name: 'Sri Venkateswara College of Engineering',
-    location: 'Bangalore, Karnataka',
+    name: 'Vidyabhava PU College',
+    location: 'Jamakandi, Karnataka',
     focus:
-      'Mechanical and electrical engineering departments supported with core subject lecturers and lab faculty.',
-  },
-  {
-    name: 'Akshara Institute of Management Studies',
-    location: 'Hyderabad, Telangana',
-    focus:
-      'MBA, BBA, and commerce programs enhanced with industry-connected faculty and soft-skills mentors.',
-  },
-  {
-    name: 'St. Mary’s College of Sciences',
-    location: 'Chennai, Tamil Nadu',
-    focus:
-      'Science foundation courses strengthened with experienced professors and continuous faculty training.',
-  },
-  {
-    name: 'Navachetana Group of Institutions',
-    location: 'Hubli, Karnataka',
-    focus:
-      'Multi-disciplinary college receiving end-to-end staffing for diploma and undergraduate programs.',
-  },
-  {
-    name: 'Shantiniketan Women’s College',
-    location: 'Mysuru, Karnataka',
-    focus:
-      'Arts and humanities faculty curated to encourage inclusive classrooms and leadership among students.',
+      'All faculties are from Dakshina Kannada with trained teachers for NEET/JEE preparation and E-Learning platform. Programs: PUC - PCMB, PCMS, PCMC.',
+    image: '/images/banner/college_building.webp',
   },
 ];
 
@@ -163,9 +141,20 @@ export default function CollegesPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
                 <div className="relative space-y-6">
-                  <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[var(--color-primary)] to-blue-600 text-white shadow-lg">
-                    <Building2 className="h-8 w-8" />
-                  </div>
+                  {college.image ? (
+                    <div className="relative h-48 w-full overflow-hidden rounded-lg">
+                      <Image
+                        src={college.image}
+                        alt={college.name}
+                        fill
+                        className="object-cover transition-transform group-hover:scale-105"
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[var(--color-primary)] to-blue-600 text-white shadow-lg">
+                      <Building2 className="h-8 w-8" />
+                    </div>
+                  )}
 
                   <div className="space-y-3">
                     <h3 className="text-2xl font-bold text-[var(--color-muted)]">
