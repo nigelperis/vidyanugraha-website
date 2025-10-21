@@ -32,7 +32,7 @@ export default function FloatingCTA() {
         {isExpanded ? (
           <div className="animate-in slide-in-from-bottom space-y-3 duration-300">
             <Link
-              href="mailto:hello@vidyanugraha.com"
+              href="mailto:vidyanugraha.edu@gmail.com"
               className="flex items-center gap-3 rounded-full bg-white px-4 py-3 text-sm font-medium text-gray-700 shadow-lg transition-all hover:scale-105 hover:shadow-xl"
             >
               <Mail className="h-4 w-4 text-blue-600" />

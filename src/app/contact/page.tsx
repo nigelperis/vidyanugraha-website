@@ -22,14 +22,14 @@ const _contactInfo = [
     icon: Mail,
     title: 'Email us',
     description: "Send us a message and we'll respond within 24 hours",
-    contact: 'hello@vidyanugraha.com',
-    href: 'mailto:hello@vidyanugraha.com',
+    contact: 'vidyanugraha.edu@gmail.com',
+    href: 'mailto:vidyanugraha.edu@gmail.com',
   },
   {
     icon: Phone,
     title: 'Call us',
     description: 'Speak directly with our team during business hours',
-    contact: '+91 98765 43210',
+    contact: '+91 85480 88424',
     href: 'tel:+919876543210',
   },
   {
@@ -140,7 +140,7 @@ export default function ContactPage() {
                       id="phone"
                       name="phone"
                       className="w-full border border-slate-300 px-4 py-3 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:outline-none"
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 85480 88424"
                     />
                   </div>
 
@@ -259,7 +259,7 @@ export default function ContactPage() {
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-orange-500 px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-orange-500/25 transition-all hover:scale-105 hover:shadow-orange-500/40"
               >
                 <Phone className="h-5 w-5" />
-                +91 98765 43210
+                +91 85480 88424
               </a>
             </div>
 

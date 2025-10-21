@@ -70,7 +70,7 @@ export default function AboutPage() {
     <div className="space-y-0 overflow-hidden">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[var(--color-primary)] via-blue-800 to-blue-900 text-white">
-        <div className="absolute inset-0 bg-[url('/images/banner/background.png')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-[url('/images/banner/college_building.webp')] bg-cover bg-center opacity-10" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
 
         <div className="relative container grid gap-12 py-12 md:grid-cols-[1.1fr,0.9fr] md:items-center">
@@ -86,9 +86,6 @@ export default function AboutPage() {
                 {' '}
                 passionate teachers
               </span>
-              <span className="mt-2 block text-4xl sm:text-5xl md:text-6xl">
-                since 2008
-              </span>
             </h1>
 
             <p className="max-w-xl text-lg leading-relaxed text-white/90">
@@ -99,7 +96,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="animate-in slide-in-from-right delay-300 duration-1000">
+          {/*  <div className="animate-in slide-in-from-right delay-300 duration-1000">
             <div className="border border-white/20 bg-white/10 p-8 backdrop-blur-lg">
               <div className="mb-6 flex items-center gap-2">
                 <Target className="h-5 w-5 text-orange-400" />
@@ -138,7 +135,7 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </div>*/}
         </div>
       </section>
 
@@ -288,7 +285,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section 
       <section className="bg-white">
         <div className="container space-y-16 py-10">
           <div className="space-y-6 text-center">
@@ -335,7 +332,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-[var(--color-primary)] via-blue-800 to-blue-900 text-white">
@@ -364,7 +361,7 @@ export default function AboutPage() {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <a
-                href="mailto:hello@vidyanugraha.com"
+                href="mailto:vidyanugraha.edu@gmail.com"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-orange-500 px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-orange-500/25 transition-all hover:scale-105 hover:shadow-orange-500/40"
               >
                 <Mail className="h-5 w-5" />

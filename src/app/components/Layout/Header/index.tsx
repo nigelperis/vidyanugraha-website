@@ -7,8 +7,8 @@ import { usePathname } from 'next/navigation';
 
 const NAV_ITEMS = [
   { href: '/', label: 'Home' },
-  { href: '/colleges', label: 'Colleges' },
   { href: '/about', label: 'About Us' },
+  { href: '/colleges', label: 'Colleges' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -24,12 +24,12 @@ function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="-m-2 flex h-18 w-18 items-center justify-center p-1 sm:m-0">
+          <div className="-m-2 flex h-22 w-26 items-center justify-center p-1 sm:m-0">
             <Image
-              src="/images/logo/Vidyanugraha_Logo.png"
-              alt="Vidyanugraha Edcuation Trust Logo"
-              width={72}
-              height={72}
+              src="/images/logo/vidyanugraha_logo.png"
+              alt="Vidyanugraha Education Trust Logo"
+              width={100}
+              height={100}
               className="h-full w-full object-contain"
               priority
             />

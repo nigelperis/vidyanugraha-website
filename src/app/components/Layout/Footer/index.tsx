@@ -5,6 +5,7 @@ function Footer() {
     { href: '/', label: 'Home' },
     { href: '/colleges', label: 'Colleges' },
     { href: '/about', label: 'About Us' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   return (
@@ -13,7 +14,7 @@ function Footer() {
         <div className="max-w-sm space-y-4">
           <div>
             <p className="text-xs font-semibold tracking-[0.3em] text-slate-500 uppercase">
-              Vidyanugraha Edcuation Trust
+              Vidyanugraha Education Trust
             </p>
             <p className="text-2xl font-semibold text-[var(--color-muted)]">
               Building academic excellence across India.
@@ -50,14 +51,14 @@ function Footer() {
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
               <li>
                 <a
-                  href="mailto:hello@vidyanugraha.com"
+                  href="mailto:vidyanugraha.edu@gmail.com"
                   className="transition hover:text-[var(--color-primary)]"
                 >
-                  hello@vidyanugraha.com
+                  vidyanugraha.edu@gmail.com
                 </a>
               </li>
-              <li>+91 98765 43210</li>
-              <li>Bangalore, Karnataka, India</li>
+              <li>+91 85480 88424</li>
+              <li>Vidyanugraha Education Trust, Moodabidri</li>
             </ul>
           </div>
         </div>

@@ -12,15 +12,64 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 
-import type { Metadata } from 'next';
-
 const partnerColleges = [
   {
-    name: 'Vidyabhava PU College',
-    location: 'Jamakandi, Karnataka',
+    name: 'Vidyabhavan Pre-University College',
+    location: 'Jamkhandi, Karnataka',
     focus:
-      'All faculties are from Dakshina Kannada with trained teachers for NEET/JEE preparation and E-Learning platform. Programs: PUC - PCMB, PCMS, PCMC.',
+      'Comprehensive coaching for CET, NEET, JEE, and NDA exams with experienced faculty from Mangaluru and Udupi. Offers holistic education with soft-skill training, yoga, meditation, and counselling sessions.',
     image: '/images/banner/college_building.webp',
+    faculty: [
+      {
+        role: 'Principal Biology (CET & NEET)',
+        name: 'Dr. Laveena K B',
+        location: 'Mangaluru',
+        image: '/images/faculty/dr.laveena_k_b.jpg',
+      },
+      {
+        role: 'Physics (CET & JEE)',
+        name: 'Mr. Vinayaka Y J',
+        location: 'Udupi',
+        image: '/images/faculty/vinayaka_y_j.jpg',
+      },
+      {
+        role: 'Chemistry (CET & JEE)',
+        name: 'Ms. Abhijna A',
+        location: 'Mangaluru',
+        image: '/images/faculty/abhijna_A.jpg',
+      },
+      {
+        role: 'Mathematics (CET & JEE)',
+        name: 'Ms. Deepali',
+        location: 'Mangaluru',
+        image: '/images/faculty/deepali.jpg',
+      },
+      {
+        role: 'Biology (CET & NEET)',
+        name: 'Dr. Deepak Naik',
+        location: 'Mangaluru',
+        image: '/images/faculty/dr.deepak_naik.jpg',
+      },
+      {
+        role: 'Computer Science (CET & JEE)',
+        name: 'Ms. Sujatha S',
+        location: 'Mangaluru',
+        image: '/images/faculty/sujatha_s.jpg',
+      },
+      {
+        role: 'Coaching In-charge (CET, NEET & JEE)',
+        name: 'Dr. Shivanand Shendre',
+        location: 'Mangaluru',
+        image: '/images/faculty/dr.shivanand_shendre.jpg',
+      },
+    ],
+    services: [
+      '60-day bridge course for NEET, CET, JEE, and NDA exams',
+      "Soft-skill training with a special focus on students' holistic growth",
+      'Emphasis on fundamental concepts and weekly assessments',
+      'Includes yoga, meditation, and counselling sessions',
+      'A blend of conventional and digital teaching methods',
+    ],
   },
 ];
 
@@ -68,7 +117,7 @@ export default function CollegesPage() {
     <div className="space-y-0 overflow-hidden">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[var(--color-primary)] via-blue-800 to-blue-900 text-white">
-        <div className="absolute inset-0 bg-[url('/images/banner/background.png')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-[url('/images/banner/college_building.webp')] bg-cover bg-center opacity-10" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
 
         <div className="relative container py-32">
@@ -94,7 +143,7 @@ export default function CollegesPage() {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <a
-                href="mailto:hello@vidyanugraha.com"
+                href="mailto:vidyanugraha.edu@gmail.com"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-orange-500 px-8 py-4 text-sm font-semibold text-white shadow-xl shadow-orange-500/25 transition-all hover:scale-105 hover:shadow-orange-500/40"
               >
                 <Mail className="h-4 w-4" />
@@ -126,7 +175,7 @@ export default function CollegesPage() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8">
             {partnerColleges.map((college, _index) => (
               <div
                 key={college.name}
@@ -134,7 +183,7 @@ export default function CollegesPage() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
-                <div className="relative space-y-6">
+                <div className="relative space-y-8">
                   {college.image ? (
                     <div className="relative h-48 w-full overflow-hidden rounded-lg">
                       <Image
@@ -165,6 +214,69 @@ export default function CollegesPage() {
                   <p className="leading-relaxed text-slate-600">
                     {college.focus}
                   </p>
+
+                  {/* Faculty Section */}
+                  {college.faculty && (
+                    <div className="space-y-4">
+                      <h4 className="flex items-center gap-2 text-lg font-semibold text-[var(--color-muted)]">
+                        <Users className="h-5 w-5" />
+                        Faculty
+                      </h4>
+                      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                        {college.faculty.map((member, index) => (
+                          <div
+                            key={index}
+                            className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
+                          >
+                            <div className="flex items-center gap-4">
+                              {member.image && (
+                                <div className="relative h-16 w-16 flex-shrink-0">
+                                  <Image
+                                    src={member.image}
+                                    alt={member.name}
+                                    fill
+                                    className="rounded-full border-2 border-slate-200 object-cover"
+                                  />
+                                </div>
+                              )}
+                              <div className="flex-1 space-y-1">
+                                <p className="text-sm leading-tight font-semibold text-[var(--color-muted)]">
+                                  {member.role}
+                                </p>
+                                <p className="font-medium text-slate-700">
+                                  {member.name}
+                                </p>
+                                <div className="flex items-center gap-1 text-xs text-slate-500">
+                                  <MapPin className="h-3 w-3" />
+                                  {member.location}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Services Section */}
+                  {college.services && (
+                    <div className="space-y-4">
+                      <h4 className="flex items-center gap-2 text-lg font-semibold text-[var(--color-muted)]">
+                        <Award className="h-5 w-5" />
+                        Services
+                      </h4>
+                      <div className="grid gap-3 lg:grid-cols-2">
+                        {college.services.map((service, index) => (
+                          <div key={index} className="flex items-start gap-3">
+                            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-500" />
+                            <span className="text-sm leading-relaxed text-slate-600">
+                              {service}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -271,7 +383,7 @@ export default function CollegesPage() {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <a
-                href="mailto:hello@vidyanugraha.com"
+                href="mailto:vidyanugraha.edu@gmail.com"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-orange-500 px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-orange-500/25 transition-all hover:scale-105 hover:shadow-orange-500/40"
               >
                 <Mail className="h-5 w-5" />
