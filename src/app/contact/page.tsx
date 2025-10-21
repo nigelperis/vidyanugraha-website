@@ -11,11 +11,11 @@ import {
 
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Contact Vidyanugraha Trust',
-  description:
-    'Get in touch with Vidyanugraha Trust. Contact us for faculty deployment, partnerships, or any inquiries about our educational services.',
-};
+// export const metadata: Metadata = {
+//   title: 'Contact Vidyanugraha EdcuTrust',
+//   description:
+//     'Get in touch with Vidyanugraha Trust. Contact us for faculty deployment, partnerships, or any inquiries about our educational services.',
+// };
 
 const _contactInfo = [
   {

@@ -14,12 +14,6 @@ import Image from 'next/image';
 
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Partner Colleges | Vidyanugraha Trust',
-  description:
-    'Explore the colleges and universities that collaborate with Vidyanugraha Trust to deliver quality teaching.',
-};
-
 const partnerColleges = [
   {
     name: 'Vidyabhava PU College',
@@ -270,9 +264,9 @@ export default function CollegesPage() {
             </h2>
 
             <p className="mx-auto max-w-3xl text-lg leading-relaxed text-white/90">
-              Share your upcoming requirements with Vidyanugraha Trust. We will
-              co-create a deployment plan that keeps your classrooms active and
-              aligned with your syllabus timelines.
+              Share your upcoming requirements with Vidyanugraha Education
+              Trust. We will co-create a deployment plan that keeps your
+              classrooms active and aligned with your syllabus timelines.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">

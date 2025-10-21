@@ -27,7 +27,7 @@ function Header() {
           <div className="-m-2 flex h-18 w-18 items-center justify-center p-1 sm:m-0">
             <Image
               src="/images/logo/Vidyanugraha_Logo.png"
-              alt="Vidyanugraha Trust Logo"
+              alt="Vidyanugraha Edcuation Trust Logo"
               width={72}
               height={72}
               className="h-full w-full object-contain"
@@ -36,11 +36,11 @@ function Header() {
           </div>
           <div>
             <p className="text-sm tracking-[0.2em] text-slate-500 uppercase">
-              Vidyanugraha Trust
+              Vidyanugraha Education Trust
             </p>
-            <p className="text-lg font-semibold text-[var(--color-muted)]">
+            {/* <p className="text-lg font-semibold text-[var(--color-muted)]">
               Empowering Education
-            </p>
+            </p> */}
           </div>
         </Link>
         <nav className="hidden items-center gap-8 md:flex">

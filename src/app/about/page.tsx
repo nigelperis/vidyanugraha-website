@@ -11,12 +11,6 @@ import {
 
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'About Vidyanugraha Trust',
-  description:
-    'Learn about Vidyanugraha Trust, our mission, leadership team, and the values guiding our work with colleges.',
-};
-
 const values = [
   {
     icon: Heart,
@@ -98,10 +92,10 @@ export default function AboutPage() {
             </h1>
 
             <p className="max-w-xl text-lg leading-relaxed text-white/90">
-              Vidyanugraha Trust was founded to bridge the growing gap between
-              institutional ambitions and the availability of qualified faculty.
-              Our team curates, mentors, and supports educators who bring both
-              knowledge and empathy to the classroom.
+              Vidyanugraha Education Trust was founded to bridge the growing gap
+              between institutional ambitions and the availability of qualified
+              faculty. Our team curates, mentors, and supports educators who
+              bring both knowledge and empathy to the classroom.
             </p>
           </div>
 
@@ -124,8 +118,8 @@ export default function AboutPage() {
                 <div className="border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
                   <p className="font-semibold text-orange-400">2008</p>
                   <p className="text-sm text-white/80">
-                    Vidyanugraha Trust is established with a pilot program
-                    across three engineering colleges.
+                    Vidyanugraha Education Trust is established with a pilot
+                    program across three engineering colleges.
                   </p>
                 </div>
                 <div className="border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
@@ -358,7 +352,7 @@ export default function AboutPage() {
               Join hands with
               <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
                 {' '}
-                Vidyanugraha Trust
+                Vidyanugraha Education Trust
               </span>
             </h2>
 

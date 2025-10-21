@@ -1,3 +1,4 @@
+import { BASE_URL } from '@/constants/config';
 import {
   ArrowRight,
   Award,
@@ -18,9 +19,54 @@ import ScrollProgress from './components/ScrollProgress';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Vidyanugraha Trust | Empowering Education',
+  title: 'Vidyanugraha Education Trust',
   description:
-    'Vidyanugraha Trust partners with colleges to provide qualified teaching faculty and continuous academic support.',
+    'Vidyanugraha Education Trust delivers foundational education with a human touch, offering faculty recruitment and management services.',
+  alternates: {
+    canonical: BASE_URL,
+  },
+  openGraph: {
+    title: 'Vidyanugraha Education Trust',
+    description:
+      'Vidyanugraha Education Trust delivers foundational education with a human touch, offering faculty recruitment and management services.',
+    url: BASE_URL,
+    siteName: 'Vidyanugraha Education Trust',
+    type: 'website',
+    locale: 'en_IN',
+    images: [
+      {
+        url: `${BASE_URL}/vidyanugraha-logo.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Pragathi Co-operative Society',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Vidyanugraha Education Trust',
+    description:
+      'Vidyanugraha Education Trust delivers foundational education with a human touch, offering faculty recruitment and management services.',
+    images: [`${BASE_URL}/vidyanugraha-logo.jpg`],
+  },
+  keywords: [
+    'Vidyanugraha',
+    'Moodbidri',
+    'Mangalore Faculty Team',
+    'NEET',
+    'JEE',
+    'CET',
+    'Coaching',
+    'PUC',
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 const highlights = [
@@ -115,15 +161,15 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-sm">
                 <Sparkles className="h-4 w-4" />
                 <span className="tracking-wider uppercase">
-                  Vidyanugraha Trust
+                  Vidyanugraha Edcuation Trust
                 </span>
               </div>
 
               <h1 className="text-5xl leading-tight font-bold tracking-tight text-blue-100 sm:text-6xl md:text-7xl">
-                Teaching talent that helps colleges
+                Foundational Education with a
                 <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
                   {' '}
-                  deliver with confidence
+                  Human Touch
                 </span>
               </h1>
 

@@ -13,7 +13,7 @@ function Footer() {
         <div className="max-w-sm space-y-4">
           <div>
             <p className="text-xs font-semibold tracking-[0.3em] text-slate-500 uppercase">
-              Vidyanugraha Trust
+              Vidyanugraha Edcuation Trust
             </p>
             <p className="text-2xl font-semibold text-[var(--color-muted)]">
               Building academic excellence across India.
@@ -63,7 +63,8 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-slate-200 bg-[var(--color-primary)] py-4 text-center text-sm text-white/90">
-        © {new Date().getFullYear()} Vidyanugraha Trust. All rights reserved.
+        © {new Date().getFullYear()} Vidyanugraha Education Trust. All rights
+        reserved.
       </div>
     </footer>
   );
