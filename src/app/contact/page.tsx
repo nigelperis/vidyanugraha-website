@@ -1,17 +1,92 @@
+'use client';
+
 import {
   CheckCircle,
   Phone,
   Send,
+  ArrowLeft,
 } from 'lucide-react';
+import { useState } from 'react';
 
-// export const metadata: Metadata = {
-//   title: 'Contact Vidyanugraha EdcuTrust',
-//   description:
-//     'Get in touch with Vidyanugraha Trust. Contact us for faculty deployment, partnerships, or any inquiries about our educational services.',
-// };
 
 
 export default function ContactPage() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const result = await response.json() as { success: boolean; message?: string };
+
+      // Web3Forms returns success: true/false in the JSON response
+      if (result.success) {
+        setIsSubmitted(true);
+        // Reset form
+        e.currentTarget.reset();
+      } else {
+        throw new Error(result.message ?? 'Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+
+      // Only show alert for actual errors, not successful submissions
+      if (!isSubmitted) {
+        console.error('There was an error submitting the form. Please try again.');
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleGoBack = () => {
+    setIsSubmitted(false);
+  };
+
+  if (isSubmitted) {
+    return (
+      <div className="space-y-0 overflow-hidden">
+        <section className="bg-gradient-to-b from-slate-50 to-white">
+          <div className="container py-20">
+            <div className="mx-auto max-w-2xl text-center">
+              <div className="mb-8">
+                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
+                  <CheckCircle className="h-10 w-10 text-green-600" />
+                </div>
+
+                <h1 className="mb-4 text-4xl font-bold text-[var(--color-muted)] sm:text-5xl">
+                  Form submitted successfully!
+                </h1>
+
+                <p className="mb-8 text-lg text-slate-600">
+                  Thank you! The form has been submitted successfully. We will reply to you soon!
+                </p>
+
+                <button
+                  type="button"
+                  onClick={handleGoBack}
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-primary)] to-blue-600 px-6 py-3 text-white font-semibold shadow-lg transition-all hover:scale-105"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  Go back
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-0 overflow-hidden">
       {/* Contact Form Section */}
@@ -35,7 +110,13 @@ export default function ContactPage() {
             </div>
 
             <div className="border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/50 lg:p-12">
-              <form className="space-y-8">
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-8"
+              >
+                <input type="hidden" name="access_key" value="5f36f58a-4a0a-4c09-ae00-d1ab0eda0e53" />
+                <input type="hidden" name="subject" value="New Contact Form Submission from Vidyanugraha Website" />
+                <input type="hidden" name="from_name" value="Vidyanugraha Contact Form" />
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="space-y-2">
                     <label
@@ -148,6 +229,11 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {/* Honeypot field for spam protection */}
+                <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+
+
+
                 <div className="flex items-center gap-3">
                   <input
                     type="checkbox"
@@ -164,10 +250,11 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-primary)] to-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-blue-500/25 transition-all hover:scale-105 hover:shadow-blue-500/40"
+                  disabled={isSubmitting}
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-primary)] to-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-blue-500/25 transition-all hover:scale-105 hover:shadow-blue-500/40 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer"
                 >
                   <Send className="h-5 w-5" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>

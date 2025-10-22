@@ -13,8 +13,8 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 
-import ScrollProgress from '~/app/components/ScrollProgress';
-import FloatingCTA from '~/app/components/FloatingCTA';
+import FloatingCTA from './components/FloatingCTA';
+import ScrollProgress from './components/ScrollProgress';
 import type { Metadata } from 'next';
 import { BASE_URL } from '~/constants/config';
 
@@ -191,14 +191,14 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Link
+                {/* <Link
                   href="mailto:vidyanugraha.edu@gmail.com"
                   className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-orange-500 px-8 py-4 text-sm font-semibold text-white shadow-xl shadow-orange-500/25 transition-all hover:scale-105 hover:shadow-orange-500/40"
                 >
                   <Mail className="h-4 w-4" />
                   Start a conversation
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+                </Link>*/}
                 <Link
                   href="/colleges"
                   className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20"
@@ -254,7 +254,7 @@ export default function Home() {
             </div>
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-              {services.map((item, _index) => (
+              {services.map((item) => (
                 <div
                   key={item.title}
                   className="group relative overflow-hidden border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-slate-300/50"
@@ -311,7 +311,7 @@ export default function Home() {
                 deploy can add value from day one.
               </p>
 
-              <div className="flex items-center gap-4 pt-4">
+              {/*  <div className="flex items-center gap-4 pt-4">
                 <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (
                     <div
@@ -323,7 +323,7 @@ export default function Home() {
                 <span className="text-sm text-slate-600">
                   Trusted by 30+ institutions
                 </span>
-              </div>
+              </div>*/}
             </div>
 
             <div className="space-y-6">
@@ -372,6 +372,13 @@ export default function Home() {
                   poster="/images/banner/college_building.webp"
                 >
                   <source src="/videos/chairman_speaks.mp4" type="video/mp4" />
+                  <track
+                    kind="captions"
+                    src="/videos/chairman_speaks_captions.vtt"
+                    srcLang="en"
+                    label="English"
+                    default
+                  />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -389,13 +396,13 @@ export default function Home() {
             </div>
 
             <div className="grid gap-8 md:grid-cols-3">
-              {trustees.map((trustee, index) => (
+              {trustees.map((trustee) => (
                 <div
-                  key={`${trustee.name}-${index}`}
+                  key={trustee.name}
                   className="group relative overflow-hidden border border-slate-200 bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
                 >
                   <div className="space-y-4 text-center">
-                    <div className="mx-auto h-40 w-40 overflow-hidden rounded-2xl bg-slate-200">
+                    <div className="mx-auto h-32 w-32 overflow-hidden rounded-full bg-slate-200">
                       <Image
                         src={trustee.image}
                         alt={trustee.name}
@@ -476,11 +483,11 @@ export default function Home() {
 
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Link
-                  href="mailto:vidyanugraha.edu@gmail.com"
+                  href="/contact"
                   className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-orange-500 px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-orange-500/25 transition-all hover:scale-105 hover:shadow-orange-500/40"
                 >
                   <Mail className="h-5 w-5" />
-                  Contact Vidyanugraha Trust
+                  Contact Now
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>

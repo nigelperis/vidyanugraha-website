@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 function Footer() {
   const navItems = [
@@ -12,13 +13,22 @@ function Footer() {
     <footer className="border-t border-slate-200 bg-white">
       <div className="container flex flex-col gap-10 py-12 md:flex-row md:items-start md:justify-between">
         <div className="max-w-sm space-y-4">
-          <div>
-            <p className="text-xs font-semibold tracking-[0.3em] text-slate-500 uppercase">
-              Vidyanugraha Education Trust
-            </p>
-            <p className="text-2xl font-semibold text-[var(--color-muted)]">
-              Foundational Education with a Human Touch
-            </p>
+          <div className="space-y-3">
+            <Image
+              src="/images/logo/vidyanugraha_logo.png"
+              alt="Vidyanugraha Education Trust Logo"
+              width={120}
+              height={60}
+              className="h-auto w-auto max-w-[120px]"
+            />
+            <div>
+              <p className="text-xs font-semibold tracking-[0.3em] text-slate-500 uppercase">
+                Vidyanugraha Education Trust
+              </p>
+              <p className="text-2xl font-semibold text-[var(--color-muted)]">
+                Foundational Education with a Human Touch
+              </p>
+            </div>
           </div>
           <p className="text-sm leading-relaxed text-slate-600">
             We deliver foundational education with a human touch, offering

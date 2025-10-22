@@ -5,9 +5,6 @@ import {
   CheckCircle,
   Mail,
   MapPin,
-  Sparkles,
-  Target,
-  TrendingUp,
   Users,
 } from 'lucide-react';
 import Image from 'next/image';
@@ -21,7 +18,8 @@ const partnerColleges = [
     image: '/images/banner/college_building.webp',
     faculty: [
       {
-        role: 'Principal Biology (CET & NEET)',
+        role: 'Biology (CET & NEET)',
+        designation: 'Principal',
         name: 'Dr. Laveena K B',
         location: 'Mangaluru',
         image: '/images/faculty/dr.laveena_k_b.jpg',
@@ -73,44 +71,7 @@ const partnerColleges = [
   },
 ];
 
-const partnershipPillars = [
-  {
-    icon: Users,
-    title: 'Right-fit recruitment',
-    description:
-      'We screen educators for subject mastery, commitment, and alignment with institutional culture before deployment.',
-    features: [
-      'Cultural alignment',
-      'Subject expertise',
-      'Commitment assessment',
-    ],
-  },
-  {
-    icon: Target,
-    title: 'Onboarding & orientation',
-    description:
-      'Faculty members receive contextual onboarding so they understand academic calendars, evaluation systems, and student expectations.',
-    features: [
-      'Structured onboarding',
-      'System training',
-      'Expectation setting',
-    ],
-  },
-  {
-    icon: TrendingUp,
-    title: 'Continuous mentoring',
-    description:
-      'Regular classroom observations and feedback sessions help educators refine delivery and adopt new pedagogies.',
-    features: ['Regular feedback', 'Skill development', 'Performance tracking'],
-  },
-  {
-    icon: Sparkles,
-    title: 'Responsive support',
-    description:
-      'Dedicated relationship managers ensure any staffing adjustments or escalations are handled swiftly.',
-    features: ['24/7 support', 'Quick resolution', 'Proactive management'],
-  },
-];
+
 
 export default function CollegesPage() {
   return (
@@ -141,7 +102,7 @@ export default function CollegesPage() {
               quality, continuity, and student success.
             </p>
 
-            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+            {/*  <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <a
                 href="mailto:vidyanugraha.edu@gmail.com"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-orange-500 px-8 py-4 text-sm font-semibold text-white shadow-xl shadow-orange-500/25 transition-all hover:scale-105 hover:shadow-orange-500/40"
@@ -150,7 +111,7 @@ export default function CollegesPage() {
                 Partner with us
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
-            </div>
+            </div>*/}
           </div>
         </div>
       </section>
@@ -179,176 +140,126 @@ export default function CollegesPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
                 <div className="relative space-y-8">
-                  {college.image ? (
-                    <div className="relative h-48 w-full overflow-hidden rounded-lg">
-                      <Image
-                        src={college.image}
-                        alt={college.name}
-                        fill
-                        className="object-cover transition-transform group-hover:scale-105"
-                      />
-                    </div>
-                  ) : (
-                    <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-[var(--color-primary)] to-blue-600 text-white shadow-lg">
-                      <Building2 className="h-8 w-8" />
-                    </div>
-                  )}
+                  {/* College Info Section */}
+                  <div className="grid gap-8 md:grid-cols-2 md:items-center">
+                    {/* Left Column - Text Content */}
+                    <div className="space-y-6 order-2 md:order-1">
+                      <div className="space-y-3">
+                        <h3 className="text-2xl font-bold text-[var(--color-muted)]">
+                          {college.name}
+                        </h3>
+                        <div className="flex items-center gap-2 text-[var(--color-primary)]">
+                          <MapPin className="h-4 w-4" />
+                          <span className="text-sm font-semibold">
+                            {college.location}
+                          </span>
+                        </div>
+                      </div>
 
-                  <div className="space-y-3">
-                    <h3 className="text-2xl font-bold text-[var(--color-muted)]">
-                      {college.name}
-                    </h3>
-                    <div className="flex items-center gap-2 text-[var(--color-primary)]">
-                      <MapPin className="h-4 w-4" />
-                      <span className="text-sm font-semibold">
-                        {college.location}
-                      </span>
+                      <p className="leading-relaxed text-slate-600">
+                        {college.focus}
+                      </p>
+                    </div>
+
+                    {/* Right Column - Image */}
+                    <div className="order-1 md:order-2">
+                      {college.image ? (
+                        <div className="relative h-64 w-full overflow-hidden rounded-lg">
+                          <Image
+                            src={college.image}
+                            alt={college.name}
+                            fill
+                            className="object-cover transition-transform group-hover:scale-105"
+                          />
+                        </div>
+                      ) : (
+                        <div className="flex h-64 w-full items-center justify-center bg-gradient-to-br from-[var(--color-primary)] to-blue-600 text-white shadow-lg rounded-lg">
+                          <Building2 className="h-16 w-16" />
+                        </div>
+                      )}
                     </div>
                   </div>
 
-                  <p className="leading-relaxed text-slate-600">
-                    {college.focus}
-                  </p>
-
-                  {/* Faculty Section */}
-                  <div className="space-y-4">
-                    <h4 className="flex items-center gap-2 text-lg font-semibold text-[var(--color-muted)]">
-                      <Users className="h-5 w-5" />
-                      Faculty
-                    </h4>
-                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                      {college.faculty.map((member) => (
-                        <div
-                          key={`${member.name}-${member.role}`}
-                          className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
-                        >
-                          <div className="flex items-center gap-4">
-                            {member.image ? (
-                              <div className="relative h-16 w-16 flex-shrink-0">
-                                <Image
-                                  src={member.image}
-                                  alt={member.name}
-                                  fill
-                                  className="rounded-full border-2 border-slate-200 object-cover"
-                                />
-                              </div>
-                            ) : null}
-                            <div className="flex-1 space-y-1">
-                              <p className="text-sm leading-tight font-semibold text-[var(--color-muted)]">
-                                {member.role}
-                              </p>
-                              <p className="font-medium text-slate-700">
-                                {member.name}
-                              </p>
-                              <div className="flex items-center gap-1 text-xs text-slate-500">
-                                <MapPin className="h-3 w-3" />
-                                {member.location}
+                  {/* Faculty Section - Full Width */}
+                  {college.faculty.length > 0 && (
+                    <div className="space-y-4">
+                      <h4 className="flex items-center gap-2 text-lg font-semibold text-[var(--color-muted)]">
+                        <Users className="h-5 w-5" />
+                        Faculty
+                      </h4>
+                      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        {college.faculty.map((member) => (
+                          <div
+                            key={`${member.name}-${member.role}`}
+                            className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
+                          >
+                            <div className="space-y-3">
+                              {member.image ? (
+                                <div className="flex items-center justify-center gap-3">
+                                  <div className="relative h-20 w-20 flex-shrink-0">
+                                    <Image
+                                      src={member.image}
+                                      alt={member.name}
+                                      fill
+                                      className="rounded-full object-cover"
+                                    />
+                                  </div>
+                                  {member.designation?.toLowerCase().includes('principal') ? (
+                                    <div className="rounded-full bg-gradient-to-r from-[var(--color-primary)] to-blue-600 px-3 py-1 text-xs font-semibold text-white">
+                                      Principal
+                                    </div>
+                                  ) : null}
+                                </div>
+                              ) : null}
+                              <div className="space-y-1 text-center">
+                                <p className="text-sm leading-tight font-semibold text-[var(--color-muted)]">
+                                  {member.role}
+                                </p>
+                                <p className="font-medium text-slate-700">
+                                  {member.name}
+                                </p>
+                                <div className="flex items-center justify-center gap-1 text-xs text-slate-500">
+                                  <MapPin className="h-3 w-3" />
+                                  {member.location}
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Services Section */}
-                  <div className="space-y-4">
-                    <h4 className="flex items-center gap-2 text-lg font-semibold text-[var(--color-muted)]">
-                      <Award className="h-5 w-5" />
-                      Services
-                    </h4>
-                    <div className="grid gap-3 lg:grid-cols-2">
-                      {college.services.map((service) => (
-                        <div key={service} className="flex items-start gap-3">
-                          <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-500" />
-                          <span className="text-sm leading-relaxed text-slate-600">
-                            {service}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partnership Pillars Section */}
-      <section className="bg-white">
-        <div className="container grid gap-16 py-10 md:grid-cols-[1fr,1fr] md:items-center">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-orange-50 px-4 py-2 text-sm font-medium text-[var(--color-accent)]">
-              <Target className="h-4 w-4" />
-              <span>Partnership Pillars</span>
-            </div>
-
-            <h2 className="text-4xl font-bold text-[var(--color-muted)] sm:text-5xl">
-              What colleges value in Vidyanugraha
-            </h2>
-
-            <p className="text-lg leading-relaxed text-slate-600">
-              Beyond filling vacancies, we invest in building resilient academic
-              teams that stay engaged with your students through every semester.
-            </p>
-
-            <div className="flex items-center gap-4 pt-4">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="h-10 w-10 rounded-full border-2 border-white bg-gradient-to-br from-blue-400 to-blue-600"
-                  />
-                ))}
-              </div>
-              <span className="text-sm text-slate-600">
-                Trusted by 30+ institutions
-              </span>
-            </div>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2">
-            {partnershipPillars.map((item) => (
-              <div
-                key={item.title}
-                className="group relative overflow-hidden border border-slate-200 bg-gradient-to-r from-slate-50 to-white p-6 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-slate-300/50"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-
-                <div className="relative space-y-4">
-                  <div className="flex h-12 w-12 items-center justify-center bg-gradient-to-br from-[var(--color-primary)] to-blue-600 text-white shadow-lg">
-                    <item.icon className="h-6 w-6" />
-                  </div>
-
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-[var(--color-muted)]">
-                      {item.title}
-                    </h3>
-                    <p className="leading-relaxed text-slate-600">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  <div className="space-y-2">
-                    {item.features.map((feature) => (
-                      <div key={feature} className="flex items-center gap-3">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
-                        <span className="text-sm text-slate-600">
-                          {feature}
-                        </span>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  )}
+
+                  {/* Services Section - Full Width */}
+                  {college.services.length > 0 && (
+                    <div className="space-y-4">
+                      <h4 className="flex items-center gap-2 text-lg font-semibold text-[var(--color-muted)]">
+                        <Award className="h-5 w-5" />
+                        Services
+                      </h4>
+                      <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+                        {college.services.map((service) => (
+                          <div key={service} className="flex items-start gap-3">
+                            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-500" />
+                            <span className="text-sm leading-relaxed text-slate-600">
+                              {service}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </section >
+
+
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-[var(--color-primary)] via-blue-800 to-blue-900 text-white">
+      < section className="bg-gradient-to-r from-[var(--color-primary)] via-blue-800 to-blue-900 text-white" >
         <div className="container py-10">
           <div className="mx-auto max-w-4xl space-y-8 text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-sm">
@@ -374,11 +285,11 @@ export default function CollegesPage() {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <a
-                href="mailto:vidyanugraha.edu@gmail.com"
+                href="/contact"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-orange-500 px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-orange-500/25 transition-all hover:scale-105 hover:shadow-orange-500/40"
               >
                 <Mail className="h-5 w-5" />
-                Schedule a partnership call
+                Schedule Call
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
@@ -399,7 +310,7 @@ export default function CollegesPage() {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 }
