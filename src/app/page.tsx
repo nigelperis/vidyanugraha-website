@@ -21,14 +21,14 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Vidyanugraha Education Trust',
   description:
-    'Vidyanugraha Education Trust delivers foundational education with a human touch, offering faculty recruitment and management services.',
+    'We deliver foundational education with a human touch, offering faculty recruitment and management services.',
   alternates: {
     canonical: BASE_URL,
   },
   openGraph: {
     title: 'Vidyanugraha Education Trust',
     description:
-      'Vidyanugraha Education Trust delivers foundational education with a human touch, offering faculty recruitment and management services.',
+      'We delivere foundational education with a human touch, offering faculty recruitment and management services.',
     url: BASE_URL,
     siteName: 'Vidyanugraha Education Trust',
     type: 'website',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Vidyanugraha Education Trust',
     description:
-      'Vidyanugraha Education Trust delivers foundational education with a human touch, offering faculty recruitment and management services.',
+      'We deliver foundational education with a human touch, offering faculty recruitment and management services.',
     images: [`${BASE_URL}/vidyanugraha-logo.jpg`],
   },
   keywords: [
