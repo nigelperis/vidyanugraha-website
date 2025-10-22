@@ -26,7 +26,7 @@ function Header() {
         <Link href="/" className="flex items-center gap-2">
           <div className="-m-2 flex h-22 w-26 items-center justify-center p-1 sm:m-0">
             <Image
-              src="/images/logo/vidyanugraha_logo.png"
+              src="/images/logo/vidyanugraha-logo.jpg"
               alt="Vidyanugraha Education Trust Logo"
               width={100}
               height={100}
