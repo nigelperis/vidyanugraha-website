@@ -15,14 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className={`${font.className} flex min-h-screen flex-col`}>
         <Header />
         <main className="flex-1 pt-10">{children}</main>
         <Footer />
-        <GoogleAnalyticsScript />
-        <MicrosoftClarity />
       </body>
+      <GoogleAnalyticsScript />
+      <MicrosoftClarity />
     </html>
   );
 }

@@ -124,7 +124,7 @@ export default function ContactPage() {
                       Faculty Deployment
                     </option>
                     <option value="partnership">
-                      Partnership Opportunities
+                      Admission
                     </option>
                     <option value="general">General Inquiry</option>
                     <option value="other">Other</option>
