@@ -17,13 +17,12 @@ function Footer() {
               Vidyanugraha Education Trust
             </p>
             <p className="text-2xl font-semibold text-[var(--color-muted)]">
-              Building academic excellence across India.
+              Foundational Education with a Human Touch
             </p>
           </div>
           <p className="text-sm leading-relaxed text-slate-600">
-            We partner with colleges to provide committed teaching faculty,
-            bridging gaps in staffing so that students receive consistent,
-            quality education.
+            We deliver foundational education with a human touch, offering
+            faculty recruitment and management services.
           </p>
         </div>
         <div className="grid w-full gap-8 sm:grid-cols-2 md:max-w-2xl">

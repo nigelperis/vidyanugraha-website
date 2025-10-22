@@ -11,9 +11,9 @@ import {
   TrendingUp,
   Users,
 } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
-import AnimatedCounter from './components/AnimatedCounter';
 import FloatingCTA from './components/FloatingCTA';
 import ScrollProgress from './components/ScrollProgress';
 import type { Metadata } from 'next';
@@ -133,12 +133,6 @@ const supportProcess = [
   },
 ];
 
-const stats = [
-  { value: '15+', label: 'Years shaping academic excellence' },
-  { value: '30+', label: 'Partner colleges supported' },
-  { value: '500+', label: 'Dedicated faculty onboarded' },
-];
-
 const trustees = [
   {
     name: 'Adarsh Hegde',
@@ -192,9 +186,8 @@ export default function Home() {
               </h1>
 
               <p className="max-w-xl text-lg leading-relaxed text-white/90">
-                We collaborate with higher education institutions across India
-                to meet immediate staffing needs, nurture faculty, and ensure
-                every classroom is guided by an inspiring educator.
+                We deliver foundational education with a human touch, offering
+                faculty recruitment and management services.
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
@@ -364,13 +357,8 @@ export default function Home() {
 
         {/* Chairman Speaks Video Section */}
         <section className="bg-gradient-to-b from-slate-50 to-white">
-          <div className="container py-10">
+          <div className="container">
             <div className="mb-16 space-y-6 text-center">
-              <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-[var(--color-primary)]">
-                <Users className="h-4 w-4" />
-                <span>Leadership Message</span>
-              </div>
-
               <h2 className="text-4xl font-bold text-[var(--color-muted)] sm:text-5xl">
                 Chairman Speaks
               </h2>
@@ -395,11 +383,6 @@ export default function Home() {
         <section className="bg-white">
           <div className="container py-10">
             <div className="mb-16 space-y-6 text-center">
-              <div className="inline-flex items-center gap-2 rounded-full bg-green-50 px-4 py-2 text-sm font-medium text-green-700">
-                <Award className="h-4 w-4" />
-                <span>Leadership Team</span>
-              </div>
-
               <h2 className="text-4xl font-bold text-[var(--color-muted)] sm:text-5xl">
                 Trustees
               </h2>
@@ -412,10 +395,12 @@ export default function Home() {
                   className="group relative overflow-hidden border border-slate-200 bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
                 >
                   <div className="space-y-4 text-center">
-                    <div className="mx-auto h-32 w-32 overflow-hidden rounded-2xl bg-slate-200">
-                      <img
+                    <div className="mx-auto h-40 w-40 overflow-hidden rounded-2xl bg-slate-200">
+                      <Image
                         src={trustee.image}
                         alt={trustee.name}
+                        width={600}
+                        height={600}
                         className="h-full w-full object-cover"
                       />
                     </div>
@@ -441,10 +426,12 @@ export default function Home() {
               <div className="mx-auto max-w-md">
                 <div className="group relative overflow-hidden border border-slate-200 bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <div className="space-y-4 text-center">
-                    <div className="mx-auto h-32 w-32 overflow-hidden rounded-full bg-slate-200">
-                      <img
+                    <div className="mx-auto h-40 w-40 overflow-hidden rounded-full bg-slate-200">
+                      <Image
                         src={academicAdvisor.image}
                         alt={academicAdvisor.name}
+                        width={600}
+                        height={600}
                         className="h-full w-full object-cover"
                       />
                     </div>

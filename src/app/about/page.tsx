@@ -5,11 +5,9 @@ import {
   Heart,
   Lightbulb,
   Mail,
-  Target,
   Users,
 } from 'lucide-react';
-
-import type { Metadata } from 'next';
+import Image from 'next/image';
 
 const values = [
   {
@@ -44,24 +42,6 @@ const values = [
       'Adaptive solutions',
       'Future-ready approach',
     ],
-  },
-];
-
-const team = [
-  {
-    name: 'Dr. Lakshmi Narayanan',
-    role: 'Founder & Academic Director',
-    bio: 'Two decades of experience leading academic reforms and faculty development initiatives across engineering colleges in South India.',
-  },
-  {
-    name: 'Meera Prasad',
-    role: 'Head of Partnerships',
-    bio: 'Specialises in institutional collaborations and ensures Vidyanugraha’s support is closely aligned to each college’s roadmap.',
-  },
-  {
-    name: 'Karthik Rao',
-    role: 'Director – Faculty Success',
-    bio: 'Drives recruitment, onboarding, and continuous mentoring for the trust’s network of lecturers and professors.',
   },
 ];
 
@@ -159,8 +139,14 @@ export default function AboutPage() {
 
               <div className="relative space-y-8">
                 <div className="flex items-start gap-6">
-                  <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center bg-gradient-to-br from-[var(--color-primary)] to-blue-600 text-white shadow-lg">
-                    <Users className="h-10 w-10" />
+                  <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center overflow-hidden">
+                    <Image
+                      src="/images/trustees/adarsh_hegde.jpg"
+                      alt="Adarsh Hedge"
+                      width={80}
+                      height={80}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
 
                   <div className="space-y-2">
