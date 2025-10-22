@@ -1,9 +1,9 @@
-import Footer from '@/app/components/Layout/Footer';
-import Header from '@/app/components/Layout/Header';
 import { Inter } from 'next/font/google';
 
-import GoogleAnalyticsScript from './components/GoogleAnalyticsScript';
-import MicrosoftClarity from './components/MicrosoftClarity';
+import GoogleAnalyticsScript from '~/app/components/GoogleAnalyticsScript';
+import MicrosoftClarity from '~/app/components/MicrosoftClarity';
+import Header from '~/app/components/Layout/Header'
+import Footer from '~/app/components/Layout/Footer'
 
 import './globals.css';
 
@@ -20,9 +20,9 @@ export default function RootLayout({
         <Header />
         <main className="flex-1 pt-10">{children}</main>
         <Footer />
+        <GoogleAnalyticsScript />
+        <MicrosoftClarity />
       </body>
-      <GoogleAnalyticsScript />
-      <MicrosoftClarity />
     </html>
   );
 }

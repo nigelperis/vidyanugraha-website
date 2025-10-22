@@ -1,15 +1,8 @@
 import {
   CheckCircle,
-  Clock,
-  Mail,
-  MapPin,
-  MessageSquare,
   Phone,
   Send,
-  Users,
 } from 'lucide-react';
-
-import type { Metadata } from 'next';
 
 // export const metadata: Metadata = {
 //   title: 'Contact Vidyanugraha EdcuTrust',
@@ -17,54 +10,6 @@ import type { Metadata } from 'next';
 //     'Get in touch with Vidyanugraha Trust. Contact us for faculty deployment, partnerships, or any inquiries about our educational services.',
 // };
 
-const _contactInfo = [
-  {
-    icon: Mail,
-    title: 'Email us',
-    description: "Send us a message and we'll respond within 24 hours",
-    contact: 'vidyanugraha.edu@gmail.com',
-    href: 'mailto:vidyanugraha.edu@gmail.com',
-  },
-  {
-    icon: Phone,
-    title: 'Call us',
-    description: 'Speak directly with our team during business hours',
-    contact: '+91 85480 88424',
-    href: 'tel:+919876543210',
-  },
-  {
-    icon: MapPin,
-    title: 'Visit us',
-    description: 'Our office is open for scheduled meetings',
-    contact: 'Bangalore, Karnataka, India',
-    href: '#',
-  },
-  {
-    icon: Clock,
-    title: 'Business hours',
-    description: "We're available to help you",
-    contact: 'Mon - Fri: 9:00 AM - 6:00 PM',
-    href: '#',
-  },
-];
-
-const _inquiryTypes = [
-  {
-    icon: Users,
-    title: 'Faculty deployment',
-    description: 'Need qualified faculty for your institution',
-  },
-  {
-    icon: MessageSquare,
-    title: 'Partnership opportunities',
-    description: 'Explore collaboration possibilities',
-  },
-  {
-    icon: Send,
-    title: 'General inquiries',
-    description: 'Any other questions or information',
-  },
-];
 
 export default function ContactPage() {
   return (

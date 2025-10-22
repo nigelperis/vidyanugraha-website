@@ -1,4 +1,3 @@
-import { BASE_URL } from '@/constants/config';
 import {
   ArrowRight,
   Award,
@@ -14,9 +13,10 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 
-import FloatingCTA from './components/FloatingCTA';
-import ScrollProgress from './components/ScrollProgress';
+import ScrollProgress from '~/app/components/ScrollProgress';
+import FloatingCTA from '~/app/components/FloatingCTA';
 import type { Metadata } from 'next';
+import { BASE_URL } from '~/constants/config';
 
 export const metadata: Metadata = {
   title: 'Vidyanugraha Education Trust',
