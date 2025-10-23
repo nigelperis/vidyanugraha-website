@@ -26,7 +26,7 @@ function Header() {
         <Link href="/" className="flex items-center gap-2">
           <div className="-m-2 flex h-22 w-26 items-center justify-center p-1 sm:m-0">
             <Image
-              src="/vidyanugraha-logo.jpg"
+              src="/vidyanugraha-logo.png"
               alt="Vidyanugraha Education Trust Logo"
               width={100}
               height={100}
@@ -54,11 +54,10 @@ function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition ${
-                  isActive
+                className={`text-sm font-medium transition ${isActive
                     ? 'text-[var(--color-primary)]'
                     : 'text-slate-600 hover:text-[var(--color-primary)]'
-                }`}
+                  }`}
               >
                 {item.label}
               </Link>
@@ -95,11 +94,10 @@ function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-base font-medium transition ${
-                    isActive
+                  className={`text-base font-medium transition ${isActive
                       ? 'text-[var(--color-primary)]'
                       : 'text-slate-600 hover:text-[var(--color-primary)]'
-                  }`}
+                    }`}
                 >
                   {item.label}
                 </Link>
