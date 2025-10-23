@@ -72,9 +72,10 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-slate-200 bg-[var(--color-primary)] py-4 text-center text-sm text-white/90">
-        © {new Date().getFullYear()} Vidyanugraha Education Trust. All rights
-        reserved.
+      <div className="border-t border-slate-200 bg-slate-50 py-6 text-center text-sm text-slate-500">
+        <div className="container">
+          <p>© {new Date().getFullYear()} Vidyanugraha Education Trust. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   );

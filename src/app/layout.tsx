@@ -4,6 +4,8 @@ import GoogleAnalyticsScript from '~/app/components/GoogleAnalyticsScript';
 import MicrosoftClarity from '~/app/components/MicrosoftClarity';
 import Header from '~/app/components/Layout/Header'
 import Footer from '~/app/components/Layout/Footer'
+import StructuredData from '~/app/components/StructuredData';
+import { organizationSchema, websiteSchema, localBusinessSchema, courseSchemas } from '~/lib/schema';
 
 import './globals.css';
 
@@ -16,6 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <StructuredData data={[organizationSchema, websiteSchema, localBusinessSchema, ...courseSchemas]} />
+      </head>
       <body className={`${font.className} flex min-h-screen flex-col`}>
         <Header />
         <main className="flex-1 pt-10">{children}</main>

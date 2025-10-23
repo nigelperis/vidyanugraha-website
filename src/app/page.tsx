@@ -15,8 +15,10 @@ import Link from 'next/link';
 
 import FloatingCTA from './components/FloatingCTA';
 import ScrollProgress from './components/ScrollProgress';
+import StructuredData from './components/StructuredData';
 import type { Metadata } from 'next';
 import { BASE_URL } from '~/constants/config';
+import { servicesSchema, peopleSchema, videoSchema, breadcrumbSchema } from '~/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Vidyanugraha Education Trust',
@@ -158,8 +160,13 @@ const academicAdvisor = {
 };
 
 export default function Home() {
+  const homeBreadcrumb = breadcrumbSchema([
+    { name: 'Home', url: BASE_URL },
+  ]);
+
   return (
     <>
+      <StructuredData data={[...servicesSchema, ...peopleSchema, videoSchema, homeBreadcrumb]} />
       <ScrollProgress />
       <FloatingCTA />
       <div className="space-y-0 overflow-hidden">
@@ -311,19 +318,6 @@ export default function Home() {
                 deploy can add value from day one.
               </p>
 
-              {/*  <div className="flex items-center gap-4 pt-4">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div
-                      key={i}
-                      className="h-10 w-10 rounded-full border-2 border-white bg-gradient-to-br from-blue-400 to-blue-600"
-                    />
-                  ))}
-                </div>
-                <span className="text-sm text-slate-600">
-                  Trusted by 30+ institutions
-                </span>
-              </div>*/}
             </div>
 
             <div className="space-y-6">

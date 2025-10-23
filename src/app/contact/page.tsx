@@ -6,13 +6,68 @@ import {
   Send,
   ArrowLeft,
 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { BASE_URL } from '~/constants/config';
 
 
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Add structured data for contact page
+  useEffect(() => {
+    const contactPageSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      '@id': `${BASE_URL}contact#webpage`,
+      url: `${BASE_URL}contact`,
+      name: 'Contact Us - Vidyanugraha Education Trust',
+      description: 'Get in touch with Vidyanugraha Education Trust for faculty recruitment, management services, and coaching programs.',
+      isPartOf: {
+        '@id': `${BASE_URL}#website`,
+      },
+      mainEntity: {
+        '@id': `${BASE_URL}#organization`,
+      },
+    };
+
+    const breadcrumbSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: BASE_URL,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Contact Us',
+          item: `${BASE_URL}contact`,
+        },
+      ],
+    };
+
+    // Create and inject structured data
+    const script1 = document.createElement('script');
+    script1.type = 'application/ld+json';
+    script1.text = JSON.stringify(contactPageSchema);
+    document.head.appendChild(script1);
+
+    const script2 = document.createElement('script');
+    script2.type = 'application/ld+json';
+    script2.text = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(script2);
+
+    // Cleanup function
+    return () => {
+      document.head.removeChild(script1);
+      document.head.removeChild(script2);
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

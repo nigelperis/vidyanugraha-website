@@ -69,43 +69,56 @@ function Header() {
           onClick={() => {
             setIsMenuOpen((prev) => !prev);
           }}
-          className="flex h-10 w-10 items-center justify-center border border-slate-200 text-slate-600 md:hidden"
+          className="flex h-10 w-20 items-center justify-center border border-slate-200 text-slate-600 md:hidden"
           aria-expanded={isMenuOpen}
           aria-label="Toggle navigation"
         >
           <span className="sr-only">Toggle navigation menu</span>
-          <div className="flex flex-col gap-[5px]">
-            <span className="block h-[2px] w-5 bg-current" />
-            <span className="block h-[2px] w-4 bg-current" />
-            <span className="block h-[2px] w-6 bg-current" />
+          <div className="relative flex h-5 w-6 flex-col items-center justify-center">
+            <span
+              className={`absolute block h-[2px] w-5 bg-current transition-all duration-300 ease-in-out ${isMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-1.5'
+                }`}
+            />
+            <span
+              className={`absolute block h-[2px] w-4 bg-current transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-0' : 'opacity-100'
+                }`}
+            />
+            <span
+              className={`absolute block h-[2px] w-5 bg-current transition-all duration-300 ease-in-out ${isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-1.5'
+                }`}
+            />
           </div>
         </button>
       </div>
-      {isMenuOpen ? (
-        <div className="border-t border-slate-200 bg-white md:hidden">
-          <nav className="container flex flex-col gap-4 py-4">
-            {NAV_ITEMS.map((item) => {
-              const isActive =
-                item.href === '/'
-                  ? pathname === '/'
-                  : pathname.startsWith(item.href);
+      <div
+        className={`overflow-hidden border-t border-slate-200 bg-white transition-all duration-300 ease-in-out md:hidden ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+      >
+        <nav className="container flex flex-col py-2">
+          {NAV_ITEMS.map((item, index) => {
+            const isActive =
+              item.href === '/'
+                ? pathname === '/'
+                : pathname.startsWith(item.href);
 
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`text-base font-medium transition ${isActive
-                    ? 'text-[var(--color-primary)]'
-                    : 'text-slate-600 hover:text-[var(--color-primary)]'
-                    }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
-      ) : null}
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`py-2 text-lg font-medium transition-all duration-200 ease-in-out hover:bg-slate-50 hover:px-4 ${isActive
+                  ? 'text-[var(--color-primary)]'
+                  : 'text-slate-600 hover:text-[var(--color-primary)]'
+                  }`}
+                style={{
+                  transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms'
+                }}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
+      </div>
     </header>
   );
 }
