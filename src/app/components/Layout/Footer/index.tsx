@@ -15,7 +15,7 @@ function Footer() {
         <div className="max-w-sm space-y-4">
           <div className="space-y-3">
             <Image
-              src="/vidyanugraha-logo.png"
+              src="/vidyanugraha-logo.jpg"
               alt="Vidyanugraha Education Trust Logo"
               width={120}
               height={60}
