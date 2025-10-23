@@ -38,12 +38,12 @@ export default function AboutPage() {
 
       {/* Our Mission Section */}
       <section className="bg-gradient-to-b from-slate-50 to-white">
-        <div className="container space-y-12 py-16">
+        <div className="container space-y-12">
           <div className="space-y-6 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-orange-50 px-4 py-2 text-sm font-medium text-[var(--color-accent)]">
+            {/* <div className="inline-flex items-center gap-2 rounded-full bg-orange-50 px-4 py-2 text-sm font-medium text-[var(--color-accent)]">
               <Target className="h-4 w-4" />
               <span>Our Mission</span>
-            </div>
+            </div>*/}
 
             <h2 className="mx-auto max-w-4xl text-4xl font-bold text-[var(--color-muted)] sm:text-5xl">
               Empowering Minds, Enriching Futures
@@ -55,7 +55,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-orange-50/30 to-blue-50/30 opacity-0 transition-opacity group-hover:opacity-100" />
 
               <div className="relative space-y-8">
-                <div className="flex items-start gap-6">
+                <div className="flex flex-col items-center gap-6 text-center md:flex-row md:items-start md:text-left">
                   <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center bg-gradient-to-br from-[var(--color-primary)] to-blue-600 text-white shadow-lg">
                     <BookOpen className="h-10 w-10" />
                   </div>
@@ -90,6 +90,77 @@ export default function AboutPage() {
                   <p className="font-semibold text-[var(--color-primary)]">
                     With modern infrastructure, quality faculty drawn from reputed institutions, and a forward-thinking approach, Vidyanugraha Education Trust is setting new benchmarks in holistic education. Every initiative is guided by one mission — to empower students to dream, discover, and define their own success stories.
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Chairman's Message Section */}
+      <section className="bg-white">
+        <div className="container space-y-12">
+          <div className="space-y-6 text-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-[var(--color-primary)]">
+              <Users className="h-4 w-4" />
+              <span>Leadership</span>
+            </div>
+
+            <h2 className="mx-auto max-w-4xl text-4xl font-bold text-[var(--color-muted)] sm:text-5xl">
+              Chairman's Message
+            </h2>
+          </div>
+
+          <div className="mx-auto max-w-7xl">
+            <div className="group relative overflow-hidden border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-8 shadow-xl shadow-slate-200/50 transition-all duration-300 md:p-12">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-orange-50/30 opacity-0 transition-opacity group-hover:opacity-100" />
+
+              <div className="relative">
+                <div className="flex flex-col gap-8 md:flex-row md:items-start">
+                  {/* Chairman's Photo */}
+                  <div className="flex-shrink-0 w-64 mx-auto md:mx-0 md:w-80">
+                    <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white h-80 md:h-96 w-full">
+                      <img
+                        src="/images/trustees/adarsh_hegde.jpg"
+                        alt="Adarsh Hegde"
+                        className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                    </div>
+
+                    <div className="mt-6 text-center w-full">
+                      <h3 className="text-2xl font-bold text-[var(--color-muted)]">
+                        Adarsh Hegde
+                      </h3>
+                      <p className="text-sm font-semibold tracking-wider text-[var(--color-primary)] uppercase">
+                        Chairman, Vidyanugraha PU College
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Message Content */}
+                  <div className="flex-1 space-y-6 text-justify text-lg leading-relaxed text-slate-700">
+                    <p>
+                      Education is the cornerstone of progress, and at Vidyanugraha PU College, we believe in nurturing not just academically proficient students, but well-rounded individuals who are ready to take on the challenges of the world. Our mission is to provide a stimulating learning environment where students are encouraged to explore their curiosity, develop critical thinking skills, and cultivate creativity.
+                    </p>
+
+                    <p>
+                      We are proud to have a team of highly qualified and experienced faculty from D.K. and Udupi districts who are dedicated to mentoring and guiding students at every step of their academic journey. At our college, we emphasize holistic development. Alongside rigorous academics, we focus on personality growth, leadership qualities, ethical values, and social responsibility.
+                    </p>
+
+                    <p>
+                      We believe that education should empower students to become confident, compassionate, and innovative individuals who can contribute meaningfully to society. Our campus provides a safe, inclusive, and supportive environment, where students feel motivated to learn, collaborate, and achieve their personal best.
+                    </p>
+
+                    <p>
+                      We also understand the importance of preparing students for the future. Through career guidance, exposure to co-curricular and extra-curricular activities, and engagement with community initiatives, we aim to broaden their horizons and build a global perspective. Every initiative at Vidyanugraha PU College is designed to foster a love for learning, inspire curiosity, and develop the skills necessary to excel not just in examinations, but in life.
+                    </p>
+
+                    <p className="font-semibold text-[var(--color-primary)]">
+                      Together, we aspire to create a generation of young leaders who are knowledgeable, responsible, and visionary.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

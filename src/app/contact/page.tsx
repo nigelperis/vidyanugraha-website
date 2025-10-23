@@ -291,23 +291,8 @@ export default function ContactPage() {
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-orange-500 px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-orange-500/25 transition-all hover:scale-105 hover:shadow-orange-500/40"
               >
                 <Phone className="h-5 w-5" />
-                +91 85480 88424
+                Call Us
               </a>
-            </div>
-
-            <div className="flex items-center justify-center gap-8 pt-8 text-sm text-white/70">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-green-400" />
-                <span>Mon - Fri: 9 AM - 6 PM</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-green-400" />
-                <span>Same-day callback</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-green-400" />
-                <span>Expert consultation</span>
-              </div>
             </div>
           </div>
         </div>

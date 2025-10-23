@@ -81,8 +81,8 @@ export default function CollegesPage() {
         <div className="absolute inset-0 bg-[url('/images/banner/college_building.webp')] bg-cover bg-center opacity-10" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
 
-        <div className="relative container py-32">
-          <div className="animate-in slide-in-from-left mx-auto max-w-4xl space-y-8 text-center duration-1000">
+        <div className="relative max-w-4xl container grid gap-12 py-12 md:grid-cols-[1.1fr,0.9fr] md:items-center">
+          <div className="animate-in slide-in-from-left space-y-8 duration-1000">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-sm">
               <Building2 className="h-4 w-4" />
               <span className="tracking-wider uppercase">Partner Colleges</span>
@@ -96,22 +96,11 @@ export default function CollegesPage() {
               </span>
             </h1>
 
-            <p className="mx-auto max-w-3xl text-lg leading-relaxed text-white/90">
+            <p className="max-w-7xl text-lg leading-relaxed text-white/90">
               Our collaborations span engineering, management, and arts colleges
               across South India. Every partnership is built on shared values of
               quality, continuity, and student success.
             </p>
-
-            {/*  <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <a
-                href="mailto:vidyanugraha.edu@gmail.com"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-orange-500 px-8 py-4 text-sm font-semibold text-white shadow-xl shadow-orange-500/25 transition-all hover:scale-105 hover:shadow-orange-500/40"
-              >
-                <Mail className="h-4 w-4" />
-                Partner with us
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div>*/}
           </div>
         </div>
       </section>
@@ -187,16 +176,21 @@ export default function CollegesPage() {
                         <Users className="h-5 w-5" />
                         Faculty
                       </h4>
-                      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                         {college.faculty.map((member) => (
                           <div
                             key={`${member.name}-${member.role}`}
-                            className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
+                            className="rounded-lg border border-slate-200 bg-white p-3 shadow-sm transition-shadow hover:shadow-md"
                           >
-                            <div className="space-y-3">
-                              {member.image ? (
-                                <div className="flex items-center justify-center gap-3">
-                                  <div className="relative h-20 w-20 flex-shrink-0">
+                            <div className="relative">
+                              {member.designation?.toLowerCase().includes('principal') ? (
+                                <div className="absolute -top-1 -right-1 rounded-full bg-gradient-to-r from-[var(--color-primary)] to-blue-600 px-2 py-0.5 text-xs font-semibold text-white">
+                                  Principal
+                                </div>
+                              ) : null}
+                              <div className="flex items-center gap-3">
+                                {member.image ? (
+                                  <div className="relative h-16 w-16 flex-shrink-0">
                                     <Image
                                       src={member.image}
                                       alt={member.name}
@@ -204,23 +198,18 @@ export default function CollegesPage() {
                                       className="rounded-full object-cover"
                                     />
                                   </div>
-                                  {member.designation?.toLowerCase().includes('principal') ? (
-                                    <div className="rounded-full bg-gradient-to-r from-[var(--color-primary)] to-blue-600 px-3 py-1 text-xs font-semibold text-white">
-                                      Principal
-                                    </div>
-                                  ) : null}
-                                </div>
-                              ) : null}
-                              <div className="space-y-1 text-center">
-                                <p className="text-sm leading-tight font-semibold text-[var(--color-muted)]">
-                                  {member.role}
-                                </p>
-                                <p className="font-medium text-slate-700">
-                                  {member.name}
-                                </p>
-                                <div className="flex items-center justify-center gap-1 text-xs text-slate-500">
-                                  <MapPin className="h-3 w-3" />
-                                  {member.location}
+                                ) : null}
+                                <div className="space-y-1">
+                                  <p className="font-medium text-slate-700 text-sm">
+                                    {member.name}
+                                  </p>
+                                  <p className="text-xs leading-tight font-semibold text-[var(--color-muted)]">
+                                    {member.role}
+                                  </p>
+                                  <div className="flex items-center gap-1 text-xs text-slate-500">
+                                    <MapPin className="h-3 w-3" />
+                                    {member.location}
+                                  </div>
                                 </div>
                               </div>
                             </div>

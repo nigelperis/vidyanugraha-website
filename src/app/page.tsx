@@ -142,7 +142,7 @@ const trustees = [
   {
     name: 'Sahana',
     location: 'Udupi',
-    image: '/images/trustees/Sahana Udupi.jpg',
+    image: '/images/trustees/Sahana.png',
   },
   {
     name: 'Jude Jeevan Correa',
@@ -408,7 +408,7 @@ export default function Home() {
                         alt={trustee.name}
                         width={600}
                         height={600}
-                        className="h-full w-full object-cover"
+                        className="h-full w-full object-cover object-top"
                       />
                     </div>
                     <div>
