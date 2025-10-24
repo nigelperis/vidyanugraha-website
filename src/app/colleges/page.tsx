@@ -6,6 +6,7 @@ import {
   Mail,
   MapPin,
   Users,
+  Phone,
 } from 'lucide-react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
@@ -31,63 +32,93 @@ export const metadata: Metadata = {
 
 const partnerColleges = [
   {
-    name: 'Vidyabhavan Pre-University College',
-    location: 'Jamkhandi, Karnataka',
+    name: 'Vidyabhavan PU College, Jamakhandi',
+    location: 'Jamakhandi, Karnataka',
     focus:
-      'Comprehensive coaching for CET, NEET, JEE, and NDA exams with experienced faculty from Mangaluru and Udupi. Offers holistic education with soft-skill training, yoga, meditation, and counselling sessions.',
+      'At Vidyabhavan PU College, education is not only about academics — it\'s about building character, nurturing curiosity, and preparing students for life beyond the classroom. Our dedicated faculty create a supportive and motivating environment, focusing on critical thinking, creativity, and ethical values.',
     image: '/images/banner/college_building.webp',
-    faculty: [
+    principal: {
+      name: 'Dr. Laveena',
+      message: 'Every student is unique, and our goal is to help them realize their full potential.',
+      image: '/images/faculty/dr.laveena_k_b.jpg',
+    },
+    courses: [
       {
-        role: 'Biology (CET & NEET)',
-        designation: 'Principal',
+        stream: 'Science Stream',
+        combinations: [
+          'PCMB (Physics, Chemistry, Mathematics, Biology)',
+          'PCMC (Physics, Chemistry, Mathematics, Computer Science)'
+        ],
+        preparation: 'Designed to prepare students for NEET, JEE, KCET, and NDA Foundation'
+      }
+    ],
+    facilities: [
+      'Spacious, ventilated classrooms',
+      'Well-equipped science and computer laboratories',
+      'Library with updated reference materials',
+      'Smart classrooms and digital learning tools',
+      'Separate hostels for boys and girls',
+      'Safe transport facilities',
+      'Personality development and mentoring programs',
+      'Regular parent-teacher interactions'
+    ],
+    facultyList: [
+      {
         name: 'Dr. Laveena K B',
+        role: 'Principal & Biology (CET & NEET)',
         location: 'Mangaluru',
         image: '/images/faculty/dr.laveena_k_b.jpg',
+        designation: 'Principal'
       },
       {
-        role: 'Physics (CET & JEE)',
         name: 'Mr. Vinayaka Y J',
+        role: 'Physics (CET & JEE)',
         location: 'Udupi',
-        image: '/images/faculty/vinayaka_y_j.jpg',
+        image: '/images/faculty/vinayaka_y_j.jpg'
       },
       {
-        role: 'Chemistry (CET & JEE)',
         name: 'Ms. Abhijna A',
+        role: 'Chemistry (CET & JEE)',
         location: 'Mangaluru',
-        image: '/images/faculty/abhijna_A.jpg',
+        image: '/images/faculty/abhijna_A.jpg'
       },
       {
-        role: 'Mathematics (CET & JEE)',
         name: 'Ms. Deepali',
+        role: 'Mathematics (CET & JEE)',
         location: 'Mangaluru',
-        image: '/images/faculty/deepali.jpg',
+        image: '/images/faculty/deepali.jpg'
       },
       {
-        role: 'Biology (CET & NEET)',
         name: 'Dr. Deepak Naik',
+        role: 'Biology (CET & NEET)',
         location: 'Mangaluru',
-        image: '/images/faculty/dr.deepak_naik.jpg',
+        image: '/images/faculty/dr.deepak_naik.jpg'
       },
       {
-        role: 'Computer Science (CET & JEE)',
         name: 'Ms. Sujatha S',
+        role: 'Computer Science (CET & JEE)',
         location: 'Mangaluru',
-        image: '/images/faculty/sujatha_s.jpg',
+        image: '/images/faculty/sujatha_s.jpg'
       },
       {
-        role: 'Coaching In-charge (CET, NEET & JEE)',
         name: 'Dr. Shivanand Shendre',
+        role: 'Coaching In-charge (CET, NEET & JEE)',
         location: 'Mangaluru',
-        image: '/images/faculty/dr.shivanand_shendre.jpg',
+        image: '/images/faculty/dr.shivanand_shendre.jpg'
+      }
+    ],
+    faculty: [
+      {
+        name: 'Adarsh Hegde',
+        contact: '+91 8548088424',
+        email: 'Vidyanugraha.edu@gmail.com'
       },
-    ],
-    services: [
-      '60-day bridge course for NEET, CET, JEE, and NDA exams',
-      "Soft-skill training with a special focus on students' holistic growth",
-      'Emphasis on fundamental concepts and weekly assessments',
-      'Includes yoga, meditation, and counselling sessions',
-      'A blend of conventional and digital teaching methods',
-    ],
+      {
+        name: 'Jeevan',
+        contact: '+91 6868663423',
+        email: 'Vidyanugraha.edu@gmail.com'
+      }
+    ]
   },
 ];
 
@@ -113,7 +144,7 @@ export default function CollegesPage() {
       addressCountry: 'IN',
     },
     image: `${BASE_URL}${college.image.substring(1)}`,
-    employee: college.faculty.map((member) => ({
+    employee: college.facultyList?.map((member) => ({
       '@type': 'Person',
       name: member.name,
       jobTitle: member.role,
@@ -128,20 +159,20 @@ export default function CollegesPage() {
         addressCountry: 'IN',
       },
       ...(member.image && { image: `${BASE_URL}${member.image.substring(1)}` }),
-    })),
+    })) || [],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: `${college.name} Services`,
-      itemListElement: college.services.map((service, index) => ({
+      name: `${college.name} Facilities`,
+      itemListElement: college.facilities.map((facility, index) => ({
         '@type': 'Offer',
         position: index + 1,
         itemOffered: {
           '@type': 'Service',
-          name: service,
+          name: facility,
         },
       })),
     },
-    knowsAbout: ['NEET Coaching', 'JEE Coaching', 'CET Coaching', 'NDA Preparation'],
+    knowsAbout: ['NEET Coaching', 'JEE Coaching', 'KCET Coaching', 'NDA Preparation'],
   }));
 
   const collegesPageSchema = {
@@ -254,22 +285,111 @@ export default function CollegesPage() {
                       </div>
                     </div>
 
-                    {/* Faculty Section - Full Width */}
-                    {college.faculty.length > 0 && (
+                    {/* Principal's Message Section */}
+                    {college.principal && (
+                      <div className="space-y-4">
+                        <h4 className="flex items-center gap-2 text-lg font-semibold text-[var(--color-muted)]">
+                          <Users className="h-5 w-5" />
+                          Message from the Principal
+                        </h4>
+                        <div className="p-6">
+                          <div className="flex flex-col md:flex-row gap-6 items-start">
+                            {college.principal.image && (
+                              <div className="relative h-24 w-24 flex-shrink-0 mx-auto md:mx-0">
+                                <Image
+                                  src={college.principal.image}
+                                  alt={college.principal.name}
+                                  fill
+                                  className="rounded-full object-cover"
+                                />
+                              </div>
+                            )}
+                            <div className="space-y-3 text-center md:text-left">
+                              <p className="italic text-[var(--color-primary)] font-medium">
+                                "{college.principal.message}"
+                              </p>
+                              <div>
+                                <p className="font-semibold text-slate-700">
+                                  {college.principal.name}
+                                </p>
+                                <p className="text-sm text-slate-500">
+                                  Principal, {college.name}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Courses Section */}
+                    {college.courses && college.courses.length > 0 && (
+                      <div className="space-y-4">
+                        <h4 className="flex items-center gap-2 text-lg font-semibold text-[var(--color-muted)]">
+                          <Award className="h-5 w-5" />
+                          Courses Offered
+                        </h4>
+                        <div className="space-y-4">
+                          {college.courses.map((course, index) => (
+                            <div key={index} className="p-4">
+                              <h5 className="font-semibold text-[var(--color-muted)] mb-2">
+                                {course.stream}
+                              </h5>
+                              <div className="space-y-2">
+                                {course.combinations.map((combination) => (
+                                  <div key={combination} className="flex items-start gap-3">
+                                    <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-500" />
+                                    <span className="text-sm text-slate-600">
+                                      {combination}
+                                    </span>
+                                  </div>
+                                ))}
+                                <p className="text-sm text-[var(--color-primary)] font-medium mt-2">
+                                  {course.preparation}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Facilities Section */}
+                    {college.facilities && college.facilities.length > 0 && (
+                      <div className="space-y-4">
+                        <h4 className="flex items-center gap-2 text-lg font-semibold text-[var(--color-muted)]">
+                          <Award className="h-5 w-5" />
+                          Facilities
+                        </h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                          {college.facilities.map((facility) => (
+                            <div key={facility} className="flex items-start gap-3">
+                              <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-500" />
+                              <span className="text-sm leading-relaxed text-slate-600">
+                                {facility}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Faculty List Section */}
+                    {college.facultyList && college.facultyList.length > 0 && (
                       <div className="space-y-4">
                         <h4 className="flex items-center gap-2 text-lg font-semibold text-[var(--color-muted)]">
                           <Users className="h-5 w-5" />
                           Faculty
                         </h4>
-                        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
-                          {college.faculty.map((member) => (
+                        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                          {college.facultyList.map((member) => (
                             <div
                               key={`${member.name}-${member.role}`}
-                              className="rounded-lg border border-slate-200 bg-white p-3 shadow-sm transition-shadow hover:shadow-md"
+                              className="border border-slate-200 bg-white p-4"
                             >
                               <div className="relative">
                                 {member.designation?.toLowerCase().includes('principal') ? (
-                                  <div className="absolute -top-1 -right-1 rounded-full bg-gradient-to-r from-[var(--color-primary)] to-blue-600 px-2 py-0.5 text-xs font-semibold text-white">
+                                  <div className="absolute -top-2 -right-2 rounded-full bg-gradient-to-r from-[var(--color-primary)] to-blue-600 px-2 py-0.5 text-xs font-semibold text-white">
                                     Principal
                                   </div>
                                 ) : null}
@@ -283,7 +403,11 @@ export default function CollegesPage() {
                                         className="rounded-full object-cover"
                                       />
                                     </div>
-                                  ) : null}
+                                  ) : (
+                                    <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-primary)] to-blue-600 text-white">
+                                      <Users className="h-8 w-8" />
+                                    </div>
+                                  )}
                                   <div className="space-y-1">
                                     <p className="font-medium text-slate-700 text-sm">
                                       {member.name}
@@ -304,25 +428,37 @@ export default function CollegesPage() {
                       </div>
                     )}
 
-                    {/* Services Section - Full Width */}
-                    {college.services.length > 0 && (
+                    {/* Contact Faculty Section */}
+                    {college.faculty && college.faculty.length > 0 && (
                       <div className="space-y-4">
                         <h4 className="flex items-center gap-2 text-lg font-semibold text-[var(--color-muted)]">
-                          <Award className="h-5 w-5" />
-                          Services
+                          <Mail className="h-5 w-5" />
+                          Contact
                         </h4>
-                        <div className="space-y-3">
-                          {college.services.map((service) => (
-                            <div key={service} className="flex items-start gap-3">
-                              <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-500" />
-                              <span className="text-sm leading-relaxed text-slate-600">
-                                {service}
-                              </span>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          {college.faculty.map((member, index) => (
+                            <div
+                              key={index}
+                              className="p-4"
+                            >
+                              <div className="space-y-2">
+                                <p className="font-semibold text-lg text-slate-700">
+                                  {member.name}
+                                </p>
+                                <div className="flex items-center gap-1 text-sm text-slate-600">
+                                  <Phone className="h-3 w-3" /><p>{member.contact}</p>
+                                </div>
+                                <div className="flex items-center gap-1 text-sm text-slate-600">
+                                  <Mail className="h-3 w-3" /><p>{member.email}</p>
+                                </div>
+                              </div>
                             </div>
                           ))}
                         </div>
                       </div>
                     )}
+
+
                   </div>
                 </div>
               ))}
@@ -364,21 +500,6 @@ export default function CollegesPage() {
                   Schedule Call
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </a>
-              </div>
-
-              <div className="flex items-center justify-center gap-8 pt-8 text-sm text-white/70">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-400" />
-                  <span>Free consultation</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-400" />
-                  <span>Custom solutions</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-400" />
-                  <span>Quick deployment</span>
-                </div>
               </div>
             </div>
           </div>

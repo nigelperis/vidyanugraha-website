@@ -31,8 +31,8 @@ function Footer() {
             </div>
           </div>
           <p className="text-sm leading-relaxed text-slate-600">
-            We deliver foundational education with a human touch, offering
-            faculty recruitment and management services.
+            Education is not just about marks — it's about making a mark in life.
+            Vidyanugraha Education Trust, Moodbidri is where dreams are nurtured, talents are polished, and futures are built.
           </p>
         </div>
         <div className="grid w-full gap-8 sm:grid-cols-2 md:max-w-2xl">
@@ -66,7 +66,14 @@ function Footer() {
                   vidyanugraha.edu@gmail.com
                 </a>
               </li>
-              <li>+91 85480 88424</li>
+              <li>
+                <a
+                  href="tel:+918548088424"
+                  className="transition hover:text-[var(--color-primary)]"
+                >
+                  +91 85480 88424
+                </a>
+              </li>
               <li>Vidyanugraha Education Trust, Moodabidri</li>
             </ul>
           </div>

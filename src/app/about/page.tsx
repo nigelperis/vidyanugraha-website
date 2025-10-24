@@ -75,7 +75,7 @@ export default function AboutPage() {
               </h1>
 
               <p className="max-w-7xl text-lg leading-relaxed text-white/90">
-                Vidyanugraha Education Trust, Moodabidri – Mangaluru, stands as a beacon of learning and innovation, founded with a heartfelt vision — to make quality education accessible, meaningful, and life-changing for every student, especially those from rural and semi-urban regions.
+                Vidyanugraha Education Trust, Moodbidri, — it is a beacon of opportunity and excellence. We believe that every student deserves access to quality education. Here, learning is interactive, innovative, and inspiring.
               </p>
             </div>
           </div>
@@ -113,24 +113,39 @@ export default function AboutPage() {
 
                   <div className="space-y-6 text-justify text-lg leading-relaxed text-slate-700">
                     <p>
-                      It was founded with the mission to transform education through creativity and quality. The word &quot;Vidyanugraha&quot; itself stands for the &quot;blessing of knowledge,&quot; and the Trust strives to ensure that every learner who walks through its doors experiences that blessing in its truest form.
+                      Our faculty, drawn from Dakshina Kannada and Udupi districts, are not only educators but mentors who guide students academically, emotionally, and ethically. We focus on developing the head, heart, and hand — intellect, character, and action.
                     </p>
 
                     <p>
-                      The Trust focuses on nurturing potential rather than merely producing results. It believes that every student carries within them a spark of excellence — and with the right guidance, environment, and opportunities, that spark can illuminate countless lives.
-                    </p>
-
-                    <p>
-                      At Vidyanugraha, education goes beyond textbooks. It&lsquo;s about shaping confidence, compassion, and character. The Trust&lsquo;s institutions emphasize experiential learning, mentorship, leadership development, and community engagement — creating a generation that not only excels academically but also leads with empathy and purpose.
-                    </p>
-
-                    <p>
-                      With a focus on holistic growth, Vidyanugraha nurtures curiosity, inspires confidence, and encourages every student to dream beyond boundaries. Rooted in values and driven by vision, the Trust continues to light the path toward a brighter, more empowered future.
+                      Beyond academics, students gain leadership, teamwork, and social responsibility skills. Vidyanugraha Education Trust, Moodbidri is where dreams are nurtured, talents are polished, and futures are built.
                     </p>
 
                     <p className="font-semibold text-[var(--color-primary)]">
-                      With modern infrastructure, quality faculty drawn from reputed institutions, and a forward-thinking approach, Vidyanugraha Education Trust is setting new benchmarks in holistic education. Every initiative is guided by one mission — to empower students to dream, discover, and define their own success stories.
+                      Our Vision: To be a center of excellence in pre-university education, nurturing competent, confident, and compassionate individuals ready to lead with integrity and purpose.
                     </p>
+
+                    <div className="bg-blue-50 p-6 rounded-lg">
+                      <h4 className="font-semibold text-[var(--color-primary)] mb-3">🕊️ Our Mission:</h4>
+                      <ul className="space-y-2 text-slate-700">
+                        <li>• Deliver quality education through dedicated faculty</li>
+                        <li>• Promote all-round development and creativity</li>
+                        <li>• Foster discipline, ethics, and social responsibility</li>
+                        <li>• Prepare students for higher education and professional success</li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-green-50 p-6 rounded-lg">
+                      <h4 className="font-semibold text-[var(--color-primary)] mb-3">🌱 Why Choose Vidyanugraha?</h4>
+                      <ul className="space-y-2 text-slate-700">
+                        <li>• Qualified faculty from DK and Udupi</li>
+                        <li>• Personalized attention for every student</li>
+                        <li>• Strong academic and value-based education</li>
+                        <li>• Focused competitive exam preparation</li>
+                        <li>• Affordable fees with excellent outcomes</li>
+                        <li>• Stress-free learning environment</li>
+                        <li>• Continuous mentoring and motivation</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -172,7 +187,7 @@ export default function AboutPage() {
 
                       <div className="mt-6 text-center w-full">
                         <h3 className="text-2xl font-bold text-[var(--color-muted)]">
-                          Adarsh Hegde
+                          – Prof. Adarsh Hegde
                         </h3>
                         <p className="text-sm font-semibold tracking-wider text-[var(--color-primary)] uppercase">
                           Chairman, Vidyanugraha Education Trust
@@ -182,24 +197,28 @@ export default function AboutPage() {
 
                     {/* Message Content */}
                     <div className="flex-1 space-y-6 text-justify text-lg leading-relaxed text-slate-700">
-                      <p>
-                        Education is the cornerstone of progress, and at Vidyanugraha PU College, we believe in nurturing not just academically proficient students, but well-rounded individuals who are ready to take on the challenges of the world. Our mission is to provide a stimulating learning environment where students are encouraged to explore their curiosity, develop critical thinking skills, and cultivate creativity.
+                      <p className="italic text-[var(--color-primary)] font-semibold">
+                        "Education is the most powerful investment we can make — not just in careers, but in building character and shaping futures."
                       </p>
 
                       <p>
-                        We are proud to have a team of highly qualified and experienced faculty from D.K. and Udupi districts who are dedicated to mentoring and guiding students at every step of their academic journey. At our college, we emphasize holistic development. Alongside rigorous academics, we focus on personality growth, leadership qualities, ethical values, and social responsibility.
+                        As the founder and chairman of Vidyanugraha Education Trust, Moodbidri, I am deeply committed to providing an environment where every student can thrive academically, socially, and personally. This trust was born from a dream: to bring the quality of education found in the best coastal Karnataka institutions to the students of Jamakhandi and surrounding areas.
                       </p>
 
                       <p>
-                        We believe that education should empower students to become confident, compassionate, and innovative individuals who can contribute meaningfully to society. Our campus provides a safe, inclusive, and supportive environment, where students feel motivated to learn, collaborate, and achieve their personal best.
+                        Over my 14 years in academic Journey, I have seen the transformative power of guidance, mentorship, and opportunity. At Vidyanugraha Education Trust, we extend this philosophy to every student. Our team of highly qualified faculty from Dakshina Kannada and Udupi District brings expertise, dedication, and passion into every classroom.
                       </p>
 
                       <p>
-                        We also understand the importance of preparing students for the future. Through career guidance, exposure to co-curricular and extra-curricular activities, and engagement with community initiatives, we aim to broaden their horizons and build a global perspective. Every initiative at Vidyanugraha PU College is designed to foster a love for learning, inspire curiosity, and develop the skills necessary to excel not just in examinations, but in life.
+                        We focus on holistic development, nurturing not just intellect, but character, values, and resilience. Our goal is to help students discover their strengths, overcome challenges, and achieve excellence in academics and life.
+                      </p>
+
+                      <p>
+                        To parents, I assure you that your children are not just students here — they are part of a community that believes in care, guidance, and personal attention. We aim to cultivate confident leaders, compassionate citizens, and lifelong learners who can face the future with courage and pride.
                       </p>
 
                       <p className="font-semibold text-[var(--color-primary)]">
-                        Together, we aspire to create a generation of young leaders who are knowledgeable, responsible, and visionary.
+                        At Vidyanugraha, every lesson, every interaction, and every opportunity is designed to empower students to dream bigger, aim higher, and achieve more. Together, we are not just educating — we are shaping futures.
                       </p>
                     </div>
                   </div>
@@ -242,20 +261,6 @@ export default function AboutPage() {
                 </a>
               </div>
 
-              <div className="flex items-center justify-center gap-8 pt-8 text-sm text-white/70">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-400" />
-                  <span>Free consultation</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-400" />
-                  <span>Quick response</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-400" />
-                  <span>Tailored solutions</span>
-                </div>
-              </div>
             </div>
           </div>
         </section>

@@ -23,14 +23,14 @@ import { servicesSchema, peopleSchema, videoSchema, breadcrumbSchema } from '~/l
 export const metadata: Metadata = {
   title: 'Vidyanugraha Education Trust',
   description:
-    'We deliver foundational education with a human touch, offering faculty recruitment and management services.',
+    'Education is not just about marks — it’s about making a mark in life.',
   alternates: {
     canonical: BASE_URL,
   },
   openGraph: {
     title: 'Vidyanugraha Education Trust',
     description:
-      'We delivere foundational education with a human touch, offering faculty recruitment and management services.',
+      'Education is not just about marks — it’s about making a mark in life.',
     url: BASE_URL,
     siteName: 'Vidyanugraha Education Trust',
     type: 'website',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Vidyanugraha Education Trust',
     description:
-      'We deliver foundational education with a human touch, offering faculty recruitment and management services.',
+      'Education is not just about marks — it’s about making a mark in life.',
     images: [`${BASE_URL}/vidyanugraha-logo.jpg`],
   },
   keywords: [
@@ -193,8 +193,7 @@ export default function Home() {
               </h1>
 
               <p className="max-w-xl text-lg leading-relaxed text-white/90">
-                We deliver foundational education with a human touch, offering
-                faculty recruitment and management services.
+                Education is not just about marks — it’s about making a mark in life.
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
@@ -484,21 +483,6 @@ export default function Home() {
                   Contact Now
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
-              </div>
-
-              <div className="flex items-center justify-center gap-8 pt-8 text-sm text-white/70">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-400" />
-                  <span>Free consultation</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-400" />
-                  <span>Quick response</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-400" />
-                  <span>Tailored solutions</span>
-                </div>
               </div>
             </div>
           </div>
